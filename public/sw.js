@@ -1,9 +1,6 @@
 var cacheName = 'laravel-8';
 var filesToCache = [
-  '/',
-  './index.php',
-  './css/app.css',
-  './js/app.js'
+  '/'
 ];
 
 /* Start the service worker and cache all of the app's content */
