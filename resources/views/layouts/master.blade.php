@@ -87,6 +87,17 @@
                                             Customers
                                         </a>
                                     </li>
+
+                                    <li>
+                                        <a class="nav-link link-dark" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                
+                                            <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                                            {{ __('Logout') }}
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -117,7 +128,7 @@
             @yield('content')
         </main>
     </div>
-    
+
     <script type="text/javascript">
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
