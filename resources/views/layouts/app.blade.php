@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json">
 </head>
 <body>
     <div id="app">
@@ -72,7 +73,7 @@
             @yield('content')
         </main>
     </div>
-
+    <script src="{{asset('js/main.js')}}"></script>
     @stack('scripts')
 </body>
 </html>
