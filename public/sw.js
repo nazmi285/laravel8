@@ -1,4 +1,4 @@
-var cacheName = 'hello-pwa';
+var cacheName = 'laravel 8';
 var filesToCache = [
   '/',
   '/index.php',
