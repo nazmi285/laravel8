@@ -26,6 +26,9 @@ Route::get('/firebase',function(){
 Route::get('/familytree',function(){
 	return view('familytree');
 });
+Route::get('/myfamily',function(){
+	return view('myfamily');
+});
 
 //////////////////////////////////////////////////////////////////////////    ADMIN
 Route::get('/admin/login', 'Auth\LoginController@showAdminLoginForm');
