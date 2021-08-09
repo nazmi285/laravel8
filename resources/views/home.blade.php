@@ -59,308 +59,72 @@
     <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z"></path>
   </symbol>
 </svg>
+
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8 mb-3">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade active show" id="dashboard" role="tabpanel" aria-labelledby="nav-dashboard-tab">
+            <livewire:dashboard />
         </div>
-        <div class="col-md-8 mb-3">
-            <button type="button" class="btn btn-primary">Primary</button>
-            <button type="button" class="btn btn-secondary">Secondary</button>
-            <button type="button" class="btn btn-success">Success</button>
-            <button type="button" class="btn btn-danger">Danger</button>
-            <button type="button" class="btn btn-warning">Warning</button>
-            <button type="button" class="btn btn-info">Info</button>
-            <button type="button" class="btn btn-light">Light</button>
-            <button type="button" class="btn btn-dark">Dark</button>
-
-            <button type="button" class="btn btn-link">Link</button>
+        <div class="tab-pane fade" id="explore" role="tabpanel" aria-labelledby="nav-explore-tab">
+            <livewire:explore />
         </div>
-        <div class="col-md-8 mb-3">
-            <div class="bg-info clearfix">
-              <button type="button" class="btn btn-secondary float-start">Example Button floated left</button>
-              <button type="button" class="btn btn-secondary float-end">Example Button floated right</button>
-            </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <livewire:setting />
         </div>
-        <div class="col-md-8 mb-3">
-            <div class="d-flex justify-content-between">
-                <button type="button" class="btn btn-primary position-relative">
-                    Mails <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">+99 <span class="visually-hidden">unread messages</span></span>
-                </button>
-                <button type="button" class="btn btn-dark position-relative">
-                    Marker <svg width="1em" height="1em" viewBox="0 0 16 16" class="position-absolute top-100 start-50 translate-middle mt-1 bi bi-caret-down-fill" fill="#212529" xmlns="http://www.w3.org/2000/svg"><path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>
-                </button>
-                <button type="button" class="btn btn-primary position-relative">
-                    Alerts <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"><span class="visually-hidden">unread messages</span></span>
-                </button>
-            </div>
-        </div>
-        <!-- <div class="col-md-8 mb-3">
-            <div class="spinner-border text-primary" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-            <div class="spinner-border text-secondary" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-            <div class="spinner-border text-success" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-            <div class="spinner-border text-danger" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-            <div class="spinner-border text-warning" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-            <div class="spinner-border text-info" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-            <div class="spinner-border text-light" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-            <div class="spinner-border text-dark" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-        </div> -->
-        <div class="col-md-8 mb-3">
-            <form class="row g-3 needs-validation" novalidate>
-                <div class="col-md-4">
-                    <label for="validationCustom01" class="form-label">First name</label>
-                    <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <label for="validationCustom02" class="form-label">Last name</label>
-                    <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <label for="validationCustomUsername" class="form-label">Username</label>
-                    <div class="input-group has-validation">
-                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                        <div class="invalid-feedback">
-                            Please choose a username.
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <label for="validationCustom03" class="form-label">City</label>
-                    <input type="text" class="form-control" id="validationCustom03" required>
-                    <div class="invalid-feedback">
-                        Please provide a valid city.
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <label for="validationCustom04" class="form-label">State</label>
-                    <select class="form-select" id="validationCustom04" required>
-                        <option selected disabled value="">Choose...</option>
-                        <option>...</option>
-                    </select>
-                    <div class="invalid-feedback">
-                        Please select a valid state.
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <label for="validationCustom05" class="form-label">Zip</label>
-                    <input type="text" class="form-control" id="validationCustom05" required>
-                    <div class="invalid-feedback">
-                        Please provide a valid zip.
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                        <label class="form-check-label" for="invalidCheck">
-                            Agree to terms and conditions
-                        </label>
-                        <div class="invalid-feedback">
-                            You must agree before submitting.
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <button class="btn btn-primary" type="submit">Submit form</button>
-                </div>
-            </form>
-        </div>
-        <div class="col-md-8 mb-3">
-            <div class="card" style="height: 250px">
-                <div class="card-body position-relative">
-                    <div class="position-absolute top-0 start-0 bg-dark">xxx</div>
-                    <div class="position-absolute top-0 end-0 bg-dark">xxx</div>
-                    <div class="position-absolute top-50 start-50 bg-dark">xxx</div>
-                    <div class="position-absolute bottom-50 end-50 bg-dark">xxx</div>
-                    <div class="position-absolute bottom-0 start-0 bg-dark">xxx</div>
-                    <div class="position-absolute bottom-0 end-0 bg-dark">xxx</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-8 mb-3">
-            <div class="card" style="height: 250px">
-                <div class="card-body position-relative ">
-                    <div class="position-absolute top-0 start-0 translate-middle bg-dark">xxx</div>
-                    <div class="position-absolute top-0 start-50 translate-middle bg-dark">xxx</div>
-                    <div class="position-absolute top-0 start-100 translate-middle bg-dark">xxx</div>
-                    <div class="position-absolute top-50 start-0 translate-middle bg-dark">xxx</div>
-                    <div class="position-absolute top-50 start-50 translate-middle bg-dark">xxx</div>
-                    <div class="position-absolute top-50 start-100 translate-middle bg-dark">xxx</div>
-                    <div class="position-absolute top-100 start-0 translate-middle bg-dark">xxx</div>
-                    <div class="position-absolute top-100 start-50 translate-middle bg-dark">xxx</div>
-                  <div class="position-absolute top-100 start-100 translate-middle bg-dark">xxx</div>
-              </div>
-          </div>
-      </div>
-      <div class="col-md-8 mb-3">
-            <div class="card" style="height: 250px">
-                <div class="card-body position-relative">
-                    <div class="position-absolute top-0 start-0 bg-dark">xxx</div>
-                    <div class="position-absolute top-0 start-50 translate-middle-x bg-dark">xxx</div>
-                    <div class="position-absolute top-0 end-0 bg-dark">xxx</div>
-                    <div class="position-absolute top-50 start-0 translate-middle-y bg-dark">xxx</div>
-                    <div class="position-absolute top-50 start-50 translate-middle bg-dark">xxx</div>
-                    <div class="position-absolute top-50 end-0 translate-middle-y bg-dark">xxx</div>
-                    <div class="position-absolute bottom-0 start-0 bg-dark">xxx</div>
-                    <div class="position-absolute bottom-0 start-50 translate-middle-x bg-dark">xxx</div>
-                    <div class="position-absolute bottom-0 end-0 bg-dark">xxx</div>
-                </div>
-          </div>
-      </div>
-      <div class="col-md-8 my-5 zindex-modal">
-        <div class="position-relative m-4">
-            <div class="progress" style="height: 1px;">
-                <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">1</button>
-            <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">2</button>
-            <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill" style="width: 2rem; height:2rem;">3</button>
-        </div>
-      </div>
-      <div class="col-md-8 my-5">
-        <div class="d-flex justify-content-between">
-        <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-            menu left
-        </a>
-        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">menu right</button>
-
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body p-0">
-                <div class="d-flex flex-column flex-shrink-0 p-3 bg-light">
-                    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-                        <span class="fs-4">Sidebar</span>
-                    </a>
-                    <hr>
-                    <ul class="nav nav-pills flex-column mb-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link active" aria-current="page">
-                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link link-dark">
-                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-                                Dashboard
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link link-dark">
-                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-                                Orders
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link link-dark">
-                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-                                Products
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link link-dark">
-                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-                                Customers
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-            <div class="offcanvas-header">
-                <h5 id="offcanvasRightLabel">Offcanvas right</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                ...
-            </div>
-        </div>
-
-      </div>
-      <div class="col-md-8 my-5">
-        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
-            Tooltip on top
-        </button>
-        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">
-            Tooltip on right
-        </button>
-        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">
-            Tooltip on bottom
-        </button>
-        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left">
-            Tooltip on left
-        </button>
-      </div>
-      <div class="col-md-8 my-5"></div>
-      <div class="col-md-8 my-5"></div>
-      <div class="col-md-8 my-5"></div>
-      <div class="col-md-8 my-5"></div>
-      <div class="col-md-8 my-5"></div>
-      <div class="col-md-8 my-5"></div>
-      <div class="col-md-8 my-5"></div>
-      <div class="col-md-8 my-5"></div>
     </div>
 </div>
+<!-- <div class="container">
+    <div class="col-md-8 mb-3">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-border text-secondary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-border text-success" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-border text-danger" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-border text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-border text-info" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-border text-light" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-border text-dark" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</div> -->
+<!-- <div class="container">
+    
 
+</div> -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom py-0 shadow-lg">
     <div class="container p-0">
         <header class="d-flex justify-content-center w-100">  
-            <ul class="nav nav-justified w-100">
-                <li class="nav-item">
-                    <a href="#" class="nav-link py-3 border-bottom text-dark" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+            <ul class="nav nav-justified w-100" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a href="#" class="nav-link py-3 text-dark" id="nav-dashboard-tab" data-bs-toggle="tab" data-bs-target="#dashboard" role="tab" aria-controls="dashboard" aria-selected="true">
                         <button type="button" class="btn btn-primary position-relative">
                             <i class="fas fa-lg fa-home position-relative"></i> <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"><span class="visually-hidden">unread messages</span></span>
                         </button>
                     </a>
                 </li>
-                <li class="nav-item ">
-                    <a href="#" class="nav-link py-3 text-dark" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+                <li class="nav-item" role="presentation">
+                    <a href="#" class="nav-link py-3 text-dark" id="nav-explore-tab" data-bs-toggle="tab" data-bs-target="#explore" role="tab" aria-controls="explore" aria-selected="false">
                         <button type="button" class="btn btn-primary position-relative">
                             <i class="fas fa-lg fa-home position-relative"></i> <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"><span class="visually-hidden">unread messages</span></span>
                         </button>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link py-3 text-dark" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+                    <a href="#" class="nav-link py-3 text-dark" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#profile" role="tab" aria-controls="profile" aria-selected="false">
                         <button type="button" class="btn btn-primary position-relative">
                             <i class="fas fa-lg fa-home position-relative"></i> <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"><span class="visually-hidden">unread messages</span></span>
                         </button>
@@ -378,8 +142,12 @@
     </div>
 </nav>
 
-
-
+<script type="text/javascript">
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
 <script type="text/javascript">
     // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function () {
