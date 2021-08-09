@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return route('login');
 });
 
 Auth::routes(['verify' => true]);
@@ -33,7 +33,7 @@ Route::get('/myfamily',function(){
 
 
 
- 
+
 //////////////////////////////////////////////////////////////////////////    ADMIN
 Route::get('/admin/login', 'Auth\LoginController@showAdminLoginForm');
 Route::post('/admin/login', 'Auth\LoginController@adminLogin')->name('admin/login');
