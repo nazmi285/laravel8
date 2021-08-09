@@ -29,7 +29,11 @@ Route::get('/familytree',function(){
 Route::get('/myfamily',function(){
 	return view('myfamily');
 });
+ 
 
+
+
+ 
 //////////////////////////////////////////////////////////////////////////    ADMIN
 Route::get('/admin/login', 'Auth\LoginController@showAdminLoginForm');
 Route::post('/admin/login', 'Auth\LoginController@adminLogin')->name('admin/login');
