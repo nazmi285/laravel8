@@ -1,5 +1,5 @@
 {
-  "name": "Laravel 8",
+  "name": "MyApp",
   "short_name": "Hello",
   "icons": [{
     "src": "images/hello-icon-128.png",
@@ -27,7 +27,7 @@
       "type": "image/png"
     }],
   "lang": "en-US",
-  "start_url": "/",
+  "start_url": "/login",
   "display": "fullscreen",
   "background_color": "white",
   "theme_color": "white"

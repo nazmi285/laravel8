@@ -156,6 +156,7 @@
                 </div>
             </div>
             <div class="offcanvas-body p-0 position-relative">
+                
                 <div class="position-absolute bottom-0 start-0 w-100">
                     <hr>     
                     <ul class="nav flex-column mb-3">
