@@ -1,6 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
+<style type="text/css">
+    .nav-link{
+        color: #212529 !important;
+    }
+</style>
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="bootstrap" viewBox="0 0 118 94">
     <title>Bootstrap</title>
@@ -110,33 +115,32 @@
         <header class="d-flex justify-content-center w-100">  
             <ul class="nav nav-justified w-100" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <a href="#" class="nav-link py-3 text-dark" id="nav-dashboard-tab" data-bs-toggle="tab" data-bs-target="#dashboard" role="tab" aria-controls="dashboard" aria-selected="true">
-                        <button type="button" class="btn btn-primary position-relative">
-                            <i class="fas fa-lg fa-home position-relative"></i> <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"><span class="visually-hidden">unread messages</span></span>
-                        </button>
+                    <a href="#home" class="nav-link py-3" id="nav-dashboard-tab" data-bs-toggle="tab" data-bs-target="#dashboard" role="tab" aria-controls="dashboard" aria-selected="true">
+                        <i class="fas fa-lg fa-home" aria-hidden="true"></i>
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a href="#" class="nav-link py-3 text-dark" id="nav-explore-tab" data-bs-toggle="tab" data-bs-target="#explore" role="tab" aria-controls="explore" aria-selected="false">
-                        <button type="button" class="btn btn-primary position-relative">
-                            <i class="fas fa-lg fa-home position-relative"></i> <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"><span class="visually-hidden">unread messages</span></span>
-                        </button>
+                    <a href="#explore" class="nav-link py-3" id="nav-explore-tab" data-bs-toggle="tab" data-bs-target="#explore" role="tab" aria-controls="explore" aria-selected="false">
+                        <i class="fa fa-lg fa-compass" aria-hidden="true"></i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link py-3 text-dark" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#profile" role="tab" aria-controls="profile" aria-selected="false">
-                        <button type="button" class="btn btn-primary position-relative">
-                            <i class="fas fa-lg fa-home position-relative"></i> <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"><span class="visually-hidden">unread messages</span></span>
-                        </button>
+                    <a href="#profile" class="nav-link py-3" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#profile" role="tab" aria-controls="profile" aria-selected="false">
+                        <i class="fa fa-lg fa-bell" aria-hidden="true"></i>
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="#setting" class="nav-link py-3" id="nav-setting-tab" data-bs-toggle="tab" data-bs-target="#setting" role="tab" aria-controls="setting" aria-selected="false">
+                        <i class="fa fa-lg fa-cog" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <!-- <li class="nav-item">
                     <a href="#" class="nav-link py-3 text-dark" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
                         <button type="button" class="btn btn-primary position-relative">
                             <i class="fas fa-lg fa-home position-relative"></i> <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"><span class="visually-hidden">unread messages</span></span>
                         </button>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </header>
     </div>

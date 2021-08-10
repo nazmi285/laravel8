@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 
     @livewireStyles
-    
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style type="text/css">
@@ -35,10 +35,57 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <button class="btn btn-icon" id="dropdownUser"data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft"><i class="fas fa-lg fa-bars" aria-hidden="true"></i></button>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">{{ config('app.name', 'Laravel') }}</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body p-0">
+                        <div class="d-flex flex-column flex-shrink-0 p-3 bg-light">
+                            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+                                <span class="fs-4">Sidebar</span>
+                            </a>
+                            <hr>
+                            <ul class="nav nav-pills flex-column mb-auto">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link active" aria-current="page">
+                                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link link-dark">
+                                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link link-dark">
+                                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+                                        Orders
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link link-dark">
+                                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+                                        Products
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link link-dark">
+                                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                                        Customers
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <a class="navbar-brand float-center" href="{{ url('/home') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                
                 <div class="d-flex">
                     <a href="#" class="d-block link-dark text-decoration" id="dropdownUser1"data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                         <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
