@@ -151,12 +151,16 @@
         </div>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasExampleLabel">
             <div class="offcanvas-header">
-                <div class="col-12 text-center">
+                <div class="col-12 text-center mt-3">
                     <img src="https://github.com/mdo.png" alt="mdo" width="78" height="78" class="rounded-circle">
                 </div>
             </div>
             <div class="offcanvas-body p-0 position-relative">
-                
+                <div class="position-absolute text-center  w-100">
+                    <span class="offcanvas-title d-block fw-bold text-capitalize">{{Auth::user()->name}}</span>
+                    <span class="text-muted ">{{Auth::user()->email}}</span>
+                    <hr>
+                </div>
                 <div class="position-absolute bottom-0 start-0 w-100">
                     <hr>     
                     <ul class="nav flex-column mb-3">
