@@ -1,9 +1,8 @@
 var cacheName = 'MyApp';
 var filesToCache = [
-  '/',
-  '/public/index.php',
-  '/public/css/app.css',
-  '/public/js/app.js',
+  'index.php',
+  'css/app.css',
+  'js/app.js',
 ];
 
 /* Start the service worker and cache all of the app's content */
