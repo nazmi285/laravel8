@@ -73,7 +73,10 @@
         <div class="tab-pane fade" id="explore" role="tabpanel" aria-labelledby="nav-explore-tab">
             <livewire:explore />
         </div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <div class="tab-pane fade" id="notification" role="tabpanel" aria-labelledby="nav-notification-tab">
+            <livewire:notification />
+        </div>
+        <div class="tab-pane fade" id="setting" role="tabpanel" aria-labelledby="nav-setting-tab">
             <livewire:setting />
         </div>
     </div>
@@ -125,7 +128,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#profile" class="nav-link py-3" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#profile" role="tab" aria-controls="profile" aria-selected="false">
+                    <a href="#notification" class="nav-link py-3" id="nav-notification-tab" data-bs-toggle="tab" data-bs-target="#notification" role="tab" aria-controls="notification" aria-selected="false">
                         <i class="fa fa-lg fa-bell" aria-hidden="true"></i>
                     </a>
                 </li>
