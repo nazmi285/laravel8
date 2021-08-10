@@ -1,4 +1,4 @@
-var cacheName = 'laravel-8';
+var cacheName = 'MyApp';
 var filesToCache = [
   '/',
   '/public/index.php',
