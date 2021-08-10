@@ -19,16 +19,23 @@ Route::get('/', function () {
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/firebase',function(){
 	return view('firebase');
 });
-Route::get('/familytree',function(){
-	return view('familytree');
-});
+
 Route::get('/myfamily',function(){
 	return view('myfamily');
 });
+
+Route::group(['middleware' => ['auth', 'verified']], function () {
+	Route::get('/home', 'HomeController@index')->name('home');
+	Route::get('/explore', 'HomeController@index')->name('explore');
+	Route::get('/notification', 'HomeController@index')->name('notification');
+	Route::get('/setting', 'HomeController@index')->name('setting');
+	Route::get('/familytree', 'HomeController@index')->name('familytree');
+	Route::get('/firebase', 'HomeController@index')->name('firebase');
+	Route::get('/bootstrap', 'HomeController@index')->name('bootstrap');
+});	
 
 //////////////////////////////////////////////////////////////////////////    ADMIN
 Route::get('/admin/login', 'Auth\LoginController@showAdminLoginForm');

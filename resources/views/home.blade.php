@@ -1,11 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-<style type="text/css">
-    .nav-link{
-        color: #212529 !important;
-    }
-</style>
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="bootstrap" viewBox="0 0 118 94">
     <title>Bootstrap</title>
@@ -65,116 +60,23 @@
   </symbol>
 </svg>
 
-<div class="container">
-    <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade active show" id="dashboard" role="tabpanel" aria-labelledby="nav-dashboard-tab">
+<div class="container mb-5">
+    <div class="row justify-content-center">
+        @if (Route::currentRouteName()=="home")
             <livewire:dashboard />
-        </div>
-        <div class="tab-pane fade" id="explore" role="tabpanel" aria-labelledby="nav-explore-tab">
+        @elseif(Route::currentRouteName()=="explore")
             <livewire:explore />
-        </div>
-        <div class="tab-pane fade" id="notification" role="tabpanel" aria-labelledby="nav-notification-tab">
+        @elseif(Route::currentRouteName()=="notification")
             <livewire:notification />
-        </div>
-        <div class="tab-pane fade" id="setting" role="tabpanel" aria-labelledby="nav-setting-tab">
+        @elseif(Route::currentRouteName()=="setting")
             <livewire:setting />
-        </div>
+        @elseif(Route::currentRouteName()=="familytree")
+            <livewire:familytree />
+        @elseif(Route::currentRouteName()=="firebase")
+            <livewire:firebase />
+        @elseif(Route::currentRouteName()=="bootstrap")
+            <livewire:bootstrap />
+        @endif
     </div>
 </div>
-<!-- <div class="container">
-    <div class="col-md-8 mb-3">
-        <div class="spinner-border text-primary" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-        <div class="spinner-border text-secondary" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-        <div class="spinner-border text-success" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-        <div class="spinner-border text-danger" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-        <div class="spinner-border text-warning" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-        <div class="spinner-border text-info" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-        <div class="spinner-border text-light" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-        <div class="spinner-border text-dark" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-    </div>
-</div> -->
-<!-- <div class="container">
-    
-
-</div> -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom py-0 shadow-lg">
-    <div class="container p-0">
-        <header class="d-flex justify-content-center w-100">  
-            <ul class="nav nav-justified w-100" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <a href="#home" class="nav-link py-3" id="nav-dashboard-tab" data-bs-toggle="tab" data-bs-target="#dashboard" role="tab" aria-controls="dashboard" aria-selected="true">
-                        <i class="fas fa-lg fa-home" aria-hidden="true"></i>
-                    </a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a href="#explore" class="nav-link py-3" id="nav-explore-tab" data-bs-toggle="tab" data-bs-target="#explore" role="tab" aria-controls="explore" aria-selected="false">
-                        <i class="fa fa-lg fa-compass" aria-hidden="true"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#notification" class="nav-link py-3" id="nav-notification-tab" data-bs-toggle="tab" data-bs-target="#notification" role="tab" aria-controls="notification" aria-selected="false">
-                        <i class="fa fa-lg fa-bell" aria-hidden="true"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#setting" class="nav-link py-3" id="nav-setting-tab" data-bs-toggle="tab" data-bs-target="#setting" role="tab" aria-controls="setting" aria-selected="false">
-                        <i class="fa fa-lg fa-cog" aria-hidden="true"></i>
-                    </a>
-                </li>
-                <!-- <li class="nav-item">
-                    <a href="#" class="nav-link py-3 text-dark" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
-                        <button type="button" class="btn btn-primary position-relative">
-                            <i class="fas fa-lg fa-home position-relative"></i> <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"><span class="visually-hidden">unread messages</span></span>
-                        </button>
-                    </a>
-                </li> -->
-            </ul>
-        </header>
-    </div>
-</nav>
-
-<script type="text/javascript">
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
-    })
-</script>
-<script type="text/javascript">
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (function () {
-      'use strict'
-
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      var forms = document.querySelectorAll('.needs-validation')
-
-      // Loop over them and prevent submission
-      Array.prototype.slice.call(forms)
-        .forEach(function (form) {
-          form.addEventListener('submit', function (event) {
-            if (!form.checkValidity()) {
-              event.preventDefault()
-              event.stopPropagation()
-            }
-
-            form.classList.add('was-validated')
-          }, false)
-        })
-    })()
-</script>
 @endsection

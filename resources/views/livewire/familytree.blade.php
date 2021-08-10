@@ -1,6 +1,3 @@
-@extends('layouts.master')
-
-@section('content')
 <style type="text/css">
     * {
         margin: 0;
@@ -467,4 +464,3 @@
         </ul>
     </div>
 </div>
-@endsection
