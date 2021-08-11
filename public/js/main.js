@@ -1,8 +1,6 @@
 window.onload = () => {
   'use strict';
 
-  let swRegistration = null;
-
   if ('serviceWorker' in navigator) {
     // navigator.serviceWorker.register('/sw.js'); // basic punya la
     //Register the service worker
@@ -10,8 +8,6 @@ window.onload = () => {
 		.register('/sw.js')
 		.then(swReg => {
 			// console.log('Service Worker is registered', swReg);
-
-			swRegistration = swReg;
 			displayNotification();
 		})
 		.catch(error => {
@@ -44,6 +40,14 @@ window.onload = () => {
 			  		dateOfArrival: Date.now(),
 			  		primaryKey: 1
 			  	},
+			  	// TODO 2.5 - add actions to the notification
+			  	actions: [{
+			  		action: 'explore', title: 'Go to the site',
+			  		icon: 'images/checkmark.png'
+			  	},{
+			  		action: 'close', title: 'Close the notification',
+			  		icon: 'images/xmark.png'
+			  	}]
 			  };
 
 		    reg.showNotification('Hello world!');
