@@ -44,7 +44,7 @@
                         </a>
                     @endif
                 </div>
-                <button type="submit" id="enableNotifications" class="btn btn-lg btn-primary w-100"> {{ __('Login') }} </button>
+                <button type="submit" class="btn btn-lg btn-primary w-100"> {{ __('Login') }} </button>
 
                 <p class="text-center mt-5">Don't have an account? 
                     <a class="nav-link" href="{{ route('register') }}">{{ __('Sign Up') }}</a>
