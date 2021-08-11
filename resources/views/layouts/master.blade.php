@@ -75,21 +75,29 @@
                         <li class="nav-item" role="presentation">
                             <a href="{{route('home')}}" class="nav-link py-3">
                                 <i class="fas fa-lg fa-home" aria-hidden="true"></i>
+                                <br>
+                                Home
                             </a>
                         </li>
                         <li class="nav-item" role="presentation">
                             <a href="{{route('explore')}}" class="nav-link py-3">
                                 <i class="fa fa-lg fa-compass" aria-hidden="true"></i>
+                                <br>
+                                Explore
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('notification')}}" class="nav-link py-3">
                                 <i class="fa fa-lg fa-bell" aria-hidden="true"></i>
+                                <br>
+                                Notification
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('setting')}}" class="nav-link py-3">
                                 <i class="fa fa-lg fa-cog" aria-hidden="true"></i>
+                                <br>
+                                Setting
                             </a>
                         </li>
                         <!-- <li class="nav-item">
