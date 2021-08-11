@@ -73,28 +73,28 @@
                 <header class="d-flex justify-content-center w-100">  
                     <ul class="nav nav-justified w-100" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <a href="{{route('home')}}" class="nav-link py-3">
+                            <a href="{{route('home')}}" class="nav-link py-3 px-1">
                                 <i class="fas fa-lg fa-home" aria-hidden="true"></i>
                                 <br>
                                 Home
                             </a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a href="{{route('explore')}}" class="nav-link py-3">
+                            <a href="{{route('explore')}}" class="nav-link py-3 px-1">
                                 <i class="fa fa-lg fa-compass" aria-hidden="true"></i>
                                 <br>
                                 Explore
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('notification')}}" class="nav-link py-3">
+                            <a href="{{route('notification')}}" class="nav-link py-3 px-1">
                                 <i class="fa fa-lg fa-bell" aria-hidden="true"></i>
                                 <br>
                                 Notification
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('setting')}}" class="nav-link py-3">
+                            <a href="{{route('setting')}}" class="nav-link py-3 px-1">
                                 <i class="fa fa-lg fa-cog" aria-hidden="true"></i>
                                 <br>
                                 Setting
