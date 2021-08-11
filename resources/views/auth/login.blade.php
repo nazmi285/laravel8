@@ -39,12 +39,12 @@
                         </label>
                     </div>
                     @if (Route::has('password.request'))
-                        <a class="btn btn-link" id="enableNotifications" href="{{ route('password.request') }}">
+                        <a class="btn btn-link" href="{{ route('password.request') }}">
                             {{ __('Forgot Password?') }}
                         </a>
                     @endif
                 </div>
-                <button type="submit" class="btn btn-lg btn-primary w-100"> {{ __('Login') }} </button>
+                <button type="submit" id="enableNotifications" class="btn btn-lg btn-primary w-100"> {{ __('Login') }} </button>
 
                 <p class="text-center mt-5">Don't have an account? 
                     <a class="nav-link" href="{{ route('register') }}">{{ __('Sign Up') }}</a>
