@@ -39,7 +39,7 @@
                         </label>
                     </div>
                     @if (Route::has('password.request'))
-                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                        <a class="btn btn-link" id="enableNotifications" href="{{ route('password.request') }}">
                             {{ __('Forgot Password?') }}
                         </a>
                     @endif
@@ -124,3 +124,6 @@
     </div> -->
 </div>
 @endsection
+@push('scripts')
+
+@endpush
