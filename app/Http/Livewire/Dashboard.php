@@ -11,7 +11,7 @@ class Dashboard extends Component
 	public function index()
     {
         $orders = Order::all();
-
+        $this->dispatchBrowserEvent('name-updated');
         return $orders;
     }
 

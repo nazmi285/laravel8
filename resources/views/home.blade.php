@@ -79,4 +79,12 @@
         @endif
     </div>
 </div>
+
 @endsection
+@push('scripts')
+    <script>
+        window.addEventListener('name-updated', event => {
+            displayNotification();
+        })
+    </script>
+@endpush
