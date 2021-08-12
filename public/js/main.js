@@ -8,7 +8,7 @@ window.onload = () => {
 		.register('/sw.js')
 		.then(swReg => {
 			// console.log('Service Worker is registered', swReg);
-			displayNotification();
+			// displayNotification();
 		})
 		.catch(error => {
 			console.error('Service Worker Error', error);
@@ -16,10 +16,10 @@ window.onload = () => {
   }
 
   // TODO 2.1
-  // if (!('Notification' in window)) {
-  // 	console.log('This browser does not support notifications!');
-  // 	return;
-  // }
+  if (!('Notification' in window)) {
+  	console.log('This browser does not support notifications!');
+  	return;
+  }
 
   // TODO 2.2 - Direct asking permission grant
   Notification.requestPermission(status => {
