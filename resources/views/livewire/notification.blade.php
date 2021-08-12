@@ -1,4 +1,4 @@
-<div class="col-md-8">
+<div class="col-md-8 mb-3">
 	<div class="list-group">
 		<a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
 			<img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
@@ -31,4 +31,8 @@
 			</div>
 		</a>
 	</div>
+</div>
+
+<div class="col-md-8 d-grid">
+	<button type="submit" class="btn btn-primary rounded-lg" id="enableNotifications">🔔 Enable Notification</button>
 </div>
