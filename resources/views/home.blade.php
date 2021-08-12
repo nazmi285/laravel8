@@ -84,7 +84,7 @@
 @push('scripts')
     <script>
         window.addEventListener('name-updated', event => {
-            displayNotification();
+            alert('hello world');
         })
     </script>
 @endpush

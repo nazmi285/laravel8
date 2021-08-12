@@ -6,12 +6,12 @@ use Livewire\Component;
 
 class Dashboard extends Component
 {
-	protected $listeners = ['updateOrder' => 'render'];
+	// protected $listeners = ['updateOrder' => 'render']; // untuk tujuan listener. <---from event
 
 	public function index()
     {
         $orders = Order::all();
-        $this->dispatchBrowserEvent('name-updated');
+        // $this->dispatchBrowserEvent('order-updated');
         return $orders;
     }
 

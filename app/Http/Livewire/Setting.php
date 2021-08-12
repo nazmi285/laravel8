@@ -18,7 +18,7 @@ class Setting extends Component
         $order->order_no = $this->order_no;
         $order->save();
 
-        $this->emit('updateOrder');
+        // $this->emit('updateOrder'); // untuk tujuan event. --->to listener
     }
 
     public function render()

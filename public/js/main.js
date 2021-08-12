@@ -51,7 +51,7 @@ window.onload = () => {
 			  	}]
 			  };
 
-		    reg.showNotification('Hello world!');
+		    reg.showNotification('Hello world!',options);
 		  });
 		}else{
 			Notification.requestPermission();
