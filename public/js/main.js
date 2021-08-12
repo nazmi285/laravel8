@@ -1,3 +1,4 @@
+
 window.onload = () => {
   'use strict';
 
@@ -57,5 +58,13 @@ window.onload = () => {
 		}
 	}
 
+	
 
 }
+
+// window.addEventListener('DOMContentLoaded', (event) => {
+// 	// Set up install prompt
+// 	const { Install } = await import('lib/install.js');
+// 	new Install(document.querySelector('#install'));
+// });
+
