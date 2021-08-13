@@ -72,7 +72,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom py-0 shadow-lg">
             <div class="container p-0">
                 <header class="d-flex justify-content-center w-100">  
-                    <ul class="nav nav-justified w-100" role="tablist">
+                <ul class="nav nav-justified w-100" role="tablist">
                         <li class="nav-item" role="presentation">
                             <a href="{{route('home')}}" class="nav-link py-3 px-1">
                                 <i class="fas fa-lg fa-home" aria-hidden="true"></i>
@@ -80,11 +80,18 @@
                                 Home
                             </a>
                         </li>
-                        <li class="nav-item" role="presentation">
+                        <!-- <li class="nav-item" role="presentation">
                             <a href="{{route('explore')}}" class="nav-link py-3 px-1">
                                 <i class="fa fa-lg fa-compass" aria-hidden="true"></i>
                                 <br>
                                 Explore
+                            </a>
+                        </li> -->
+                        <li class="nav-item" role="presentation">
+                            <a href="{{route('product')}}" class="nav-link py-3 px-1">
+                                <i class="fas fa-lg fa-box" aria-hidden="true"></i>
+                                <br>
+                                Product
                             </a>
                         </li>
                         <li class="nav-item">
@@ -176,7 +183,9 @@
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasExampleLabel">
             <div class="offcanvas-header">
                 <div class="col-12 text-center mt-3">
-                    <img src="https://github.com/mdo.png" alt="mdo" width="78" height="78" class="rounded-circle">
+                    <a href="{{route('profile')}}">
+                        <img src="https://github.com/mdo.png" alt="mdo" width="78" height="78" class="rounded-circle">
+                    </a>
                 </div>
             </div>
             <div class="offcanvas-body p-0 position-relative">

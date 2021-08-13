@@ -1,3 +1,6 @@
+@extends('layouts.master')
+
+@section('content')
 <style type="text/css">
     * {
         margin: 0;
@@ -132,7 +135,7 @@
         border-color: #94a0b4;
     }
 </style>
-<!-- <style type="text/css">
+<style type="text/css">
     /*Now the CSS*/
     * {margin: 0; padding: 0;}
 
@@ -254,7 +257,7 @@
 
     /*Thats all. I hope you enjoyed it.
     Thanks :)*/
-</style> -->
+</style>
 <div class="container">
     <form id="form1">
         <div class="tree" id="FamilyTreeDiv">
@@ -268,9 +271,9 @@
                     </div>
                     <ul>
                         <li>
-                            <div class="position-relative">
-                                <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle position-absolute top-50 start-100 translate-middle">
-                                <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle position-absolute top-50 start-0 translate-middle">
+                            <div>
+                                <span class="male">Sam Snow</span>
+                                <span class="female">Lily Sight</span>
                             </div>
                             <ul>
                                 <li>
@@ -323,7 +326,7 @@
         </div>
     </form>
 </div>
-<!-- <div class="container">
+<div class="container">
     <div class="tree">
         <ul>   
             <li>
@@ -463,4 +466,5 @@
             </li>
         </ul>
     </div>
-</div> -->
+</div>
+@endsection

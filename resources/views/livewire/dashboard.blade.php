@@ -12,7 +12,18 @@
 			{{ __('You are logged in!') }}
 		</div>
 	</div>
-	<div class="card card-default">
+    <div class="card rounded-3">
+        <div class="card-body">
+            <div class="clearfix">
+                <h5 class="card-title float-start fw-bold">#ORD_0001</h5>
+                <span class="float-end">35 min ago</span>
+            </div>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+        </div>
+    </div>
+
+	<div class="card card-default mt-3">
         <div class="card-header">
             <div class="row">
                 <div class="col-md-10">
@@ -28,7 +39,7 @@
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody wire:poll.keep-alive>
+            <tbody wire:poll>
             	@foreach($orders as $order)
                 <tr>
                     <td>{{$order->order_no}}</td>

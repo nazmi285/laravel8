@@ -21,18 +21,20 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 
 Route::get('/store',function(){
-	return view('store');
+	return view('public');
 })->name('store');
 
 
 Route::group(['middleware' => ['auth', 'verified']], function () {
 	Route::get('/home', 'HomeController@index')->name('home');
+	Route::get('/product', 'HomeController@index')->name('product');
 	Route::get('/explore', 'HomeController@index')->name('explore');
 	Route::get('/notification', 'HomeController@index')->name('notification');
 	Route::get('/setting', 'HomeController@index')->name('setting');
 	Route::get('/familytree', 'HomeController@index')->name('familytree');
 	Route::get('/firebase', 'HomeController@index')->name('firebase');
 	Route::get('/bootstrap', 'HomeController@index')->name('bootstrap');
+	Route::get('/profile', 'HomeController@index')->name('profile');
 });	
 
 //////////////////////////////////////////////////////////////////////////    ADMIN
