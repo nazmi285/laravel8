@@ -24,10 +24,10 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style type="text/css">
         .offcanvas-start{
-            width: 250px !important;
+            width: 264px !important;
         }
         .offcanvas-end{
-            width: 250px !important;
+            width: 264px !important;
         }
         .nav-link{
             color: #212529 !important;
@@ -37,7 +37,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white shadow-sm">
             <div class="container">
                 <button class="btn btn-icon" id="dropdownUser"data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft"><i class="fas fa-lg fa-bars" aria-hidden="true"></i></button>
                 
@@ -89,18 +89,27 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{route('notification')}}" class="nav-link py-3 px-1">
-                                <i class="fa fa-lg fa-bell" aria-hidden="true"></i>
+                                <i class="fa fa-lg fa-bell position-relative" aria-hidden="true">
+                                <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-1"><span class="visually-hidden">unread messages</span></span></i>
+
                                 <br>
                                 Notification
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{route('store')}}" class="nav-link py-3 px-1">
+                                <i class="fas fa-lg fa-store"></i>
+                                <br>
+                                Store
+                            </a>
+                        </li>
+                        <!-- <li class="nav-item">
                             <a href="{{route('setting')}}" class="nav-link py-3 px-1">
                                 <i class="fa fa-lg fa-cog" aria-hidden="true"></i>
                                 <br>
                                 Setting
                             </a>
-                        </li>
+                        </li> -->
                         <!-- <li class="nav-item">
                             <a href="#" class="nav-link py-3 text-dark" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
                                 <button type="button" class="btn btn-primary position-relative">
@@ -154,6 +163,12 @@
                                 Bootstrap 5
                             </a>
                         </li>
+                        <li>
+                            <a href="{{route('setting')}}" class="nav-link link-dark">
+                                <i class="fa fa-lg fa-cog" aria-hidden="true"></i>
+                                Settings
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -187,7 +202,7 @@
                 </div>
             </div>
         </div>
-        <main class="py-4">
+        <main class="py-4 mt-5">
             @yield('content')
         </main>
     </div>

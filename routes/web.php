@@ -20,13 +20,10 @@ Route::get('/', function () {
 
 Auth::routes(['verify' => true]);
 
-Route::get('/firebase',function(){
-	return view('firebase');
-});
+Route::get('/store',function(){
+	return view('store');
+})->name('store');
 
-Route::get('/myfamily',function(){
-	return view('myfamily');
-});
 
 Route::group(['middleware' => ['auth', 'verified']], function () {
 	Route::get('/home', 'HomeController@index')->name('home');
