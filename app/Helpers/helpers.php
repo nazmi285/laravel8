@@ -89,6 +89,22 @@ function carbonDiffForHumanShort($date)
     return $result;
 }
 
+function carbonDateSorting($date)
+{
+    $thisDate = \Carbon\Carbon::parse($date);
+    $currentDate = \Carbon\Carbon::now();
+    $diffTime = $currentDate->diff($thisDate)->days;
+
+    if($diffTime <= 1){
+        $result = 'Today';
+    }elseif($diffTime = 2){
+        $result = 'Yesterday';
+    }else{
+        $result = date("d-M-Y", strtotime($thisDate));
+    }
+    return $result;
+}
+
 function dateConvertID($date)
 {
     $ymd = date("ymd", strtotime($date));

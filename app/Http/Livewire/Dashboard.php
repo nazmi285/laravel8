@@ -3,15 +3,17 @@
 namespace App\Http\Livewire;
 use App\Models\Order;
 use Livewire\Component;
+use Carbon\Carbon;
 
 class Dashboard extends Component
-{
-	// protected $listeners = ['updateOrder' => 'render']; // untuk tujuan listener. <---from event
-
+{       
 	public function index()
     {
-        $orders = Order::all();
-        // $this->dispatchBrowserEvent('order-updated');
+        $orders = Order::orderBy('created_at','desc')->get();
+        $orders =   $orders->groupBy(function($val) {
+                        return Carbon::parse($val->created_at)->format('Y-m-d');
+                    });
+        // dd($orders);
         return $orders;
     }
 

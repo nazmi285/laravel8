@@ -125,7 +125,7 @@ window.onload = () => {
 	        }
 	    }
 	    // https://us1.locationiq.com/v1/reverse.php?key=pk.2288cddc3fdbc2739738067f403723d7&lat=3.1684&lon=101.7033%20lng&format=json //locationIQ
-		console.log(location);
+		// console.log(location);
 		// showInMap(position);
 	}
 	// function showInMap(pos) {
