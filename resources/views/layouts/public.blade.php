@@ -51,6 +51,7 @@
             </div>
         </nav>
         <main class="py-4 mt-5">
+            <div class="mb-3" id="mapholder"></div>
             @yield('content')
         </main>
     </div>
