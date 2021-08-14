@@ -13,11 +13,11 @@ window.onload = () => {
 			// console.log('Service Worker is registered', swReg);
 			// displayNotification();
 			
-			subscribeUser();
+			// subscribeUser();
 			//request for location
 			getLocation();
 
-			initializeUi();
+			// initializeUi();
 		})
 		.catch(error => {
 			console.error('Service Worker Error', error);
@@ -85,6 +85,12 @@ window.onload = () => {
 		}
 	}
 
+	function initializeUi() {
+		notificationButton.addEventListener("click", () => {
+			displayNotification();
+		});
+	}
+
 	//function that gets the location and returns it
 	function getLocation() {
 		if(navigator.geolocation) {
@@ -99,12 +105,16 @@ window.onload = () => {
 			longitude: position.coords.longitude,
 			latitude: position.coords.latitude
 		}
-		console.log(location)
+		console.log(location);
+		showInMap(position);
 	}
+	function showInMap(pos) {
+    	var latlon = pos.coords.latitude + "," + pos.coords.longitude;
 
-	function initializeUi() {
-		notificationButton.addEventListener("click", () => {
-			displayNotification();
-		});
+    	var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
+    	+latlon+"&zoom=14&size=400x300&sensor=false&key=YOUR_:KEY";
+
+	    var map = document.querySelector("mapholder");
+	    map.innerHTML = "<img src='"+img_url+"'>";
 	}
 }
