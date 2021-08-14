@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Http\Livewire;
-use Auth;
+
 use Livewire\Component;
 
-class Store extends Component
+class ProductView extends Component
 {
     public function render()
     {
-        return view('livewire.store');
+        return view('livewire.product-view');
     }
 }

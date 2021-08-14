@@ -1,6 +1,34 @@
 @extends('layouts.app')
 
 @section('content')
+<style type="text/css">
+
+    .btn-google {
+        color: #545454;
+        background-color: #ffffff;
+        box-shadow: 0 1px 2px 1px #ddd
+    }
+
+    .or-container {
+        align-items: center;
+        color: #ccc;
+        display: flex;
+        margin: 25px 0
+    }
+
+    .line-separator {
+        background-color: #ccc;
+        flex-grow: 5;
+        height: 1px
+    }
+
+    .or-label {
+        flex-grow: 1;
+        margin: 0 15px;
+        text-align: center
+    }
+
+</style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-4">
@@ -45,6 +73,15 @@
                     @endif
                 </div>
                 <button type="submit" class="btn btn-lg btn-primary w-100"> {{ __('Login') }} </button>
+
+                <div class="or-container">
+                    <div class="line-separator"></div>
+                    <div class="or-label">or</div>
+                    <div class="line-separator"></div>
+                </div>
+                <div class="row">
+                    <div class="d-grid"><a class="btn btn-lg btn-google btn-block btn-outline" href="{{ url('auth/google') }}"><img width="18px" src="https://assets.gitlab-static.net/assets/auth_buttons/google_64-9ab7462cd2115e11f80171018d8c39bd493fc375e83202fbb6d37a487ad01908.png"> Login With Google </a></div>
+                </div> 
 
                 <p class="text-center mt-5">Don't have an account? 
                     <a class="nav-link" href="{{ route('register') }}">{{ __('Sign Up') }}</a>

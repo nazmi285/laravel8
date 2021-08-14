@@ -72,7 +72,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom py-0 shadow-lg">
             <div class="container p-0">
                 <header class="d-flex justify-content-center w-100">  
-                <ul class="nav nav-justified w-100" role="tablist">
+                    <ul class="nav nav-justified w-100" role="tablist">
                         <li class="nav-item" role="presentation">
                             <a href="{{route('home')}}" class="nav-link py-3 px-1">
                                 <i class="fas fa-lg fa-home" aria-hidden="true"></i>
@@ -138,6 +138,7 @@
             </div>
 
             <div class="offcanvas-body p-0">
+
                 <div class="d-flex flex-column flex-shrink-0 p-3 bg-light">
                     <!-- <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
                         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>

@@ -4,9 +4,6 @@
             <h3>Notifications</h3>
         </div>
     </div>
-    <div class="col-12 col-lg-8 col-md-12 col-sm-12 d-none" id="filtered">
-        <span class="d-inline">Filter by</span>  <div class="d-inline" id="show-filtered" ></div>
-    </div>
 </div>
 <div class="col-12 col-md-8 mb-3 mx-0 px-0">
 	<div class="list-group list-group-flush">

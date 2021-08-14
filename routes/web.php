@@ -12,13 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     // return view('welcome');
     return redirect('login');
 });
 
 Auth::routes(['verify' => true]);
+//Google Authentication Routes
+Route::get('auth/google', 'SocialController@redirectToGoogle');
+Route::get('auth/google/callback', 'SocialController@googleLoginOrRegister');
 
 Route::get('/store',function(){
 	return view('public');
@@ -28,6 +30,7 @@ Route::get('/store',function(){
 Route::group(['middleware' => ['auth', 'verified']], function () {
 	Route::get('/home', 'HomeController@index')->name('home');
 	Route::get('/product', 'HomeController@index')->name('product');
+	Route::get('/product/new', 'HomeController@index')->name('product.new');
 	Route::get('/explore', 'HomeController@index')->name('explore');
 	Route::get('/notification', 'HomeController@index')->name('notification');
 	Route::get('/setting', 'HomeController@index')->name('setting');

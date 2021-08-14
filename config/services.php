@@ -39,5 +39,10 @@ return [
         'app_id' => env('FIREBASE_APP_ID'),
         'measurement_id' => env('FIREBASE_MEASUREMENT_ID'),
     ],
+    'google' => [
+        'client_id' =>  env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' =>   env('GOOGLE_CLIENT_REDIERECT'),
+    ],
 
 ];
