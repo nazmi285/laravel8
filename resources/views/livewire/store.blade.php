@@ -1,7 +1,15 @@
+
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-md-8 mb-3">
 			<div class="row">
+				<div class="col-12 col-sm-12 col-md-12 mb-3">
+					<div class="input-group input group-sm">
+						<input type="search" class="form-control rounded-3 " name="keyword" id="keyword">
+						<button type="button" class="btn btn-icon rounded-3 mx-2"><i class="fa fa-th-large" aria-hidden="true"></i></button>
+						<button type="button" class="btn btn-icon rounded-3"><i class="fa fa-th-list" aria-hidden="true"></i></button>
+					</div>
+				</div>
 				<div class="col-6 col-sm-6 col-md-4">
 					<a href="#" class="product-sm mb-3 text-decoration-none position-relative" data-bs-toggle="modal" data-bs-target="#exampleModal">
 
@@ -9,7 +17,7 @@
 							<span class="position-absolute top-0 end-0 btn btn-sm btn-danger shadow-sm rounded-0"><span class="visually">Sale</span></span>
 						<div class="text-wrap">
 							<p class="title text-truncate">Great product name is here</p>
-							<div class="price">$17.00</div> <!-- price-wrap.// -->
+							<div class="price">RM17.00</div> <!-- price-wrap.// -->
 						</div>
 					</a>
 				</div>
@@ -18,7 +26,7 @@
 						<div class="img-wrap"> <img src="{{asset('images/items/item.jpg')}}"> </div>
 						<div class="text-wrap">
 							<p class="title text-truncate">Skillmax bike black</p>
-							<div class="price">$35.00</div> <!-- price-wrap.// -->
+							<div class="price">RM35.00</div> <!-- price-wrap.// -->
 						</div>
 					</a>
 			    </div>
@@ -27,7 +35,7 @@
 						<div class="img-wrap"> <img src="{{asset('images/items/item.jpg')}}"> </div>
 						<div class="text-wrap">
 							<p class="title text-truncate">Apple ipad pro 32Gb white</p>
-							<div class="price">$12.50</div> <!-- price-wrap.// -->
+							<div class="price">RM12.50</div> <!-- price-wrap.// -->
 						</div>
 					</a>
 			    </div>
@@ -36,7 +44,7 @@
 						<div class="img-wrap"> <img src="{{asset('images/items/item.jpg')}}"> </div>
 						<div class="text-wrap">
 							<p class="title text-truncate">Headset for laptop</p>
-							<div class="price">$17.00</div> <!-- price-wrap.// -->
+							<div class="price">RM17.00</div> <!-- price-wrap.// -->
 						</div>
 					</a>
 				</div>
@@ -45,7 +53,7 @@
 						<div class="img-wrap"> <img src="{{asset('images/items/item.jpg')}}"> </div>
 						<div class="text-wrap">
 							<p class="title text-truncate">TP link modem</p>
-							<div class="price">$17.00</div> <!-- price-wrap.// -->
+							<div class="price">RM17.00</div> <!-- price-wrap.// -->
 						</div>
 					</a>
 				</div>
@@ -54,7 +62,7 @@
 						<div class="img-wrap"> <img src="{{asset('images/items/item.jpg')}}"> </div>
 						<div class="text-wrap">
 							<p class="title text-truncate">Great product name is here</p>
-							<div class="price">$36.00</div> <!-- price-wrap.// -->
+							<div class="price">RM36.00</div> <!-- price-wrap.// -->
 						</div>
 					</a>
 				</div>
@@ -63,7 +71,7 @@
 						<div class="img-wrap"> <img src="{{asset('images/items/item.jpg')}}"> </div>
 						<div class="text-wrap">
 							<p class="title text-truncate">Great product name is here</p>
-							<div class="price">$99.00</div> <!-- price-wrap.// -->
+							<div class="price">RM99.00</div> <!-- price-wrap.// -->
 						</div>
 					</a>
 				</div>
@@ -72,7 +80,7 @@
 						<div class="img-wrap"> <img src="{{asset('images/items/item.jpg')}}"> </div>
 						<div class="text-wrap">
 							<p class="title text-truncate">Great product name is here</p>
-							<div class="price">$218.00</div> <!-- price-wrap.// -->
+							<div class="price">RM218.00</div> <!-- price-wrap.// -->
 						</div>
 					</a>
 				</div>
@@ -81,7 +89,7 @@
 						<div class="img-wrap"> <img src="{{asset('images/items/item.jpg')}}"> </div>
 						<div class="text-wrap">
 							<p class="title text-truncate">Great product name is here</p>
-							<div class="price">$17.00</div> <!-- price-wrap.// -->
+							<div class="price">RM17.00</div> <!-- price-wrap.// -->
 						</div>
 					</a>
 				</div>
