@@ -12,12 +12,12 @@ window.onload = () => {
 		.then(swReg => {
 			// console.log('Service Worker is registered', swReg);
 			// displayNotification();
-			initializeUi();
-
-
+			
 			subscribeUser();
 			//request for location
 			getLocation();
+
+			initializeUi();
 		})
 		.catch(error => {
 			console.error('Service Worker Error', error);
@@ -34,12 +34,6 @@ window.onload = () => {
 	Notification.requestPermission(status => {
 		// console.log('Notification permission status:', status);
 	});
-	
-	function initializeUi() {
-		notificationButton.addEventListener("click", () => {
-			displayNotification();
-		});
-	}
 
 	function displayNotification() {
 		// TODO 2.3
@@ -106,5 +100,11 @@ window.onload = () => {
 			latitude: position.coords.latitude
 		}
 		console.log(location)
+	}
+
+	function initializeUi() {
+		notificationButton.addEventListener("click", () => {
+			displayNotification();
+		});
 	}
 }
