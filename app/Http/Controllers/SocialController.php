@@ -10,27 +10,19 @@ use Laravel\Socialite\Facades\Socialite;
 
 class SocialController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    
-    public function redirectToGoogle()
-    {
-        return Socialite::driver('google')->redirect();
+    public function googleRedirect(){
+    	return Socialite::driver('google')->redirect();
+    } 
+
+    public function googleCallback(){
+        $user = Socialite::driver('google')->user();
+
+        $this->registerOrLoginGoogleUser($user);
     }
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function handleGoogleCallback()
+    public function registerOrLoginGoogleUser($guser)
     {
         try {
-
-            $guser = Socialite::driver('google')->user();
 
             $finduser = User::where('google_id', $guser->id)->first();
 
@@ -41,25 +33,8 @@ class SocialController extends Controller
                 return redirect('/home');
 
             } else {
-                // $user = new User;
-                // if($guser->avatar)
-                // {
-                //     $url = null;
-
-                //     $source_url = parse_url($guser->avatar);
-                //     $extension = pathinfo($source_url['path'], PATHINFO_EXTENSION);
-
-                //     $filename = $guser->id.'.'.$extension;
-
-                //     $url = 'profiles/'.$filename;
-                //     Storage::disk('profile')->put($filename, 'public');
-
-                //     $user->image_url = $url;
-
-                // }
                 $user = User::where('email', '=', $guser->email)->first();
                 if ($user === null) {
-                    // dd('user not exists',$user);
                     // user doesn't exist
                     $user = new User;
                     $user->email = $guser->email;
@@ -85,7 +60,6 @@ class SocialController extends Controller
                         event(new UserRegister($user, $sendTo));
                     }
                 }else{
-                    // dd('user exists',$user);
                     $user->google_id = $guser->id;
                     $user->save();  
                 }
@@ -97,16 +71,8 @@ class SocialController extends Controller
             }
 
         } catch (Exception $e) {
-            // dd($e->getMessage());
             return redirect('/')->with('danger', $e);
         }
     }
 
-    public function googleRedirect(){
-    	return Socialite::driver('google')->redirect();
-    } 
-
-    public function googleCallback(){
-
-    }
 }
