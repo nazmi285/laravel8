@@ -34,17 +34,17 @@
     <script>
         
     // Enable pusher logging - don't include this in production
-    Pusher.logToConsole = true;
+    // Pusher.logToConsole = true;
 
-    var pusher = new Pusher('008d20185269e76240f3', {
-        cluster: 'ap1'
-    });
+    // var pusher = new Pusher('008d20185269e76240f3', {
+    //     cluster: 'ap1'
+    // });
 
-    var channel = pusher.subscribe('my-channel');
-    channel.bind('my-event', function(data) {
-        alert(JSON.stringify(data));
-        displayNotification();
+    // var channel = pusher.subscribe('my-channel');
+    // channel.bind('my-event', function(data) {
+    //     alert(JSON.stringify(data));
+    //     displayNotification();
 
-    });
+    // });
     </script>
 @endpush

@@ -36,7 +36,6 @@ window.onload = () => {
 	});
 
 	function displayNotification() {
-		alert("yes");
 		// TODO 2.3
 		if (Notification.permission == 'granted') {
 		  navigator.serviceWorker.getRegistration().then(reg => {
