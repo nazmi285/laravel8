@@ -1,4 +1,4 @@
-<div class="col-md-8 mb-3 p-0">
+<div class="col-md-8 mb-3 p-0" wire:poll.keep-alive>
     <div class="input-group input-group-sm mb-3">
         <input type="search" class="form-control form-control-sm rounded-3 " name="keyword" id="keyword" placeholder="Search">
         <button type="button" class="btn btn-icon rounded-3 mx-2 "><i class="fa fa-lg fa-th-large" aria-hidden="true"></i></button>
