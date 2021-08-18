@@ -32,7 +32,7 @@
 <script src="{{asset('js/main.js')}}"></script>
 <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
     <script>
-        
+
     // Enable pusher logging - don't include this in production
     // Pusher.logToConsole = true;
 
@@ -43,7 +43,7 @@
     // var channel = pusher.subscribe('my-channel');
     // channel.bind('my-event', function(data) {
     //     alert(JSON.stringify(data));
-    //     displayNotification();
+
 
     // });
     </script>

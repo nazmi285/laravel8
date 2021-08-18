@@ -38,6 +38,7 @@ window.onload = () => {
 	function displayNotification() {
 		// TODO 2.3
 		if (Notification.permission == 'granted') {
+			alert("granted");
 		  navigator.serviceWorker.getRegistration().then(reg => {
 
 		    // TODO 2.4 - Add 'options' object to configure the notification
@@ -62,6 +63,7 @@ window.onload = () => {
 		    reg.showNotification('Hello world!',options);
 		  });
 		}else{
+			alert("no permission");
 			Notification.requestPermission();
 		}
 	}
