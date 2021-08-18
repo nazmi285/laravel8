@@ -36,8 +36,8 @@
 			</div>
 		</a>
 	</div>
-	<button wire:click="notify">+ {{$stringtest}}</button>
-	<div class="col-md-8 d-grid">
-		<button type="button" class="btn btn-primary rounded-lg" id="enableNotifications">🔔 Enable Notification</button>
+
+	<div class="col-md-8 d-grid p-3">
+		<button type="button" class="btn btn-primary rounded-0" id="enableNotifications-xx" wire:click="notify">🔔 Enable Notification</button>
 	</div>
 </div>
