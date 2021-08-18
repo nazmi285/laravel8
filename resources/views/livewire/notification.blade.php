@@ -38,6 +38,6 @@
 	</div>
 
 	<div class="col-md-8 d-grid p-3">
-		<button type="button" class="btn btn-primary rounded-0" id="enableNotifications-xx" wire:click="notify">🔔 Enable Notification</button>
+		<button type="button" class="btn btn-primary rounded-0" id="enableNotifications" >🔔 Enable Notification</button>
 	</div>
 </div>
