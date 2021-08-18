@@ -25,7 +25,7 @@ class Setting extends Component
 
         $payment = Payment::paymentNo();
         $payment->title = 'Order Title';
-        $payment->Description = 'Order Description';
+        $payment->description = 'Order Description';
         $payment->amount = $order->amount;
         $payment->status = 'New';
 
@@ -51,7 +51,7 @@ class Setting extends Component
 
         $payment = Payment::paymentNo();
         $payment->title = 'Bill Title';
-        $payment->Description = 'Bill Description';
+        $payment->description = 'Bill Description';
         $payment->amount = $bill->amount;
         $payment->status = 'New';
 
