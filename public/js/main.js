@@ -36,6 +36,7 @@ window.onload = () => {
 	});
 
 	function displayNotification() {
+		alert("yes");
 		// TODO 2.3
 		if (Notification.permission == 'granted') {
 		  navigator.serviceWorker.getRegistration().then(reg => {
@@ -137,4 +138,14 @@ window.onload = () => {
 	//     	var map = document.querySelector("mapholder");
 	//     	map.innerHTML = "<img src='"+img_url+"'>";
 	// }
+	Pusher.logToConsole = true;
+
+    var pusher = new Pusher('008d20185269e76240f3', {
+        cluster: 'ap1'
+    });
+
+    var channel = pusher.subscribe('my-channel');
+    channel.bind('my-event', function(data) {
+        displayNotification();
+    });
 }

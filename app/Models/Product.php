@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+
+    public static function productNo(){
+
+        $product_no = random_str('8','1234567890');
+
+        if(!empty($product_no) && ! static::where('product_no', $product_no)->count()){
+            $product = static::create(['product_no'=>$product_no]); 
+            return $product;
+        }else{
+            static::productNo();
+        }
+    }
 }

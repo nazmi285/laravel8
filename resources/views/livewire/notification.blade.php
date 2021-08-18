@@ -1,14 +1,12 @@
-<div class="col-12 col-md-8 mb-3">
+<div class="col-12 col-md-8 mb-3 mx-0 px-0">
 	<div class="row justify-content-center mb-3">
 		<div class="d-flex justify-content-between">
             <h3>Notifications</h3>
         </div>
     </div>
-</div>
-<div class="col-12 col-md-8 mb-3 mx-0 px-0">
-	<div class="list-group list-group-flush">
-		<a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-			<img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+	<div class="list-group">
+		<a href="#" class="list-group-item list-group-item-action border-0 d-flex gap-3 py-3" aria-current="true">
+			<img src="https://github.com/twbs.png" alt="twbs" width="43" height="43" class="rounded-circle flex-shrink-0">
 			<div class="d-flex gap-2 w-100 justify-content-between">
 				<div>
 					<h6 class="mb-0">List group item heading</h6>
@@ -17,8 +15,8 @@
 				<small class="opacity-50 text-nowrap">now</small>
 			</div>
 		</a>
-		<a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-			<img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+		<a href="#" class="list-group-item list-group-item-action border-0 d-flex gap-3 py-3" aria-current="true">
+			<img src="https://github.com/twbs.png" alt="twbs" width="43" height="43" class="rounded-circle flex-shrink-0">
 			<div class="d-flex gap-2 w-100 justify-content-between">
 				<div>
 					<h6 class="mb-0">Another title here</h6>
@@ -27,8 +25,8 @@
 				<small class="opacity-50 text-nowrap">3d</small>
 			</div>
 		</a>
-		<a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-			<img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+		<a href="#" class="list-group-item list-group-item-action border-0 d-flex gap-3 py-3" aria-current="true">
+			<img src="https://github.com/twbs.png" alt="twbs" width="43" height="43" class="rounded-circle flex-shrink-0">
 			<div class="d-flex gap-2 w-100 justify-content-between">
 				<div>
 					<h6 class="mb-0">Third heading</h6>
@@ -38,8 +36,8 @@
 			</div>
 		</a>
 	</div>
-</div>
-
-<div class="col-md-8 d-grid">
-	<button type="submit" class="btn btn-primary rounded-lg" id="enableNotifications">🔔 Enable Notification</button>
+	<button wire:click="notify">+ {{$stringtest}}</button>
+	<div class="col-md-8 d-grid">
+		<button type="button" class="btn btn-primary rounded-lg" id="enableNotifications">🔔 Enable Notification</button>
+	</div>
 </div>

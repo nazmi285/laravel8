@@ -8,10 +8,8 @@
             <livewire:dashboard />
         @elseif(Route::currentRouteName()=="product")
             <livewire:product />
-        @elseif(Route::currentRouteName()=="product.new")
-            <livewire:product-new />
-        @elseif(Route::currentRouteName()=="product.view")
-            <livewire:product-view />
+        @elseif(Route::currentRouteName()=="product.create")
+            <livewire:product.create />
         @elseif(Route::currentRouteName()=="explore")
             <livewire:explore />
         @elseif(Route::currentRouteName()=="notification")
@@ -26,6 +24,8 @@
             <livewire:bootstrap />
         @elseif(Route::currentRouteName()=="profile")
             <livewire:profile />
+        @elseif(Route::currentRouteName()=="booking")
+            <livewire:booking />
         @endif
     </div>
 </div>

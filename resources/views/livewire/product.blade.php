@@ -9,7 +9,7 @@
     </div>
     <div class="row justify-content-left mb-3">
 	    <div class="col-6 col-md-4">
-	    	<a href="{{route('product.new')}}">
+	    	<a href="{{route('product.create')}}">
 				<div class="card rounded-3 alert-primary h-100">
 					<div class="card-body my-5 position-relative">
 						<div class="position-absolute top-50 start-50 translate-middle text-center">

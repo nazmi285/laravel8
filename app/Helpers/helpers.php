@@ -97,7 +97,7 @@ function carbonDateSorting($date)
 
     if($diffTime <= 1){
         $result = 'Today';
-    }elseif($diffTime = 2){
+    }elseif($diffTime == 2){
         $result = 'Yesterday';
     }else{
         $result = date("d-M-Y", strtotime($thisDate));

@@ -14,6 +14,9 @@ class Dashboard extends Component
                         return Carbon::parse($val->created_at)->format('Y-m-d');
                     });
         // dd($orders);
+        // foreach ($orders as $key => $value) {
+        //     dd($key,$value);
+        // }
         return $orders;
     }
 

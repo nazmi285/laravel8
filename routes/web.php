@@ -30,7 +30,7 @@ Route::get('/store',function(){
 Route::group(['middleware' => ['auth', 'verified']], function () {
 	Route::get('/home', 'HomeController@index')->name('home');
 	Route::get('/product', 'HomeController@index')->name('product');
-	Route::get('/product/new', 'HomeController@index')->name('product.new');
+	Route::get('/product/create', 'HomeController@index')->name('product.create');
 	Route::get('/explore', 'HomeController@index')->name('explore');
 	Route::get('/notification', 'HomeController@index')->name('notification');
 	Route::get('/setting', 'HomeController@index')->name('setting');
@@ -38,6 +38,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 	Route::get('/firebase', 'HomeController@index')->name('firebase');
 	Route::get('/bootstrap', 'HomeController@index')->name('bootstrap');
 	Route::get('/profile', 'HomeController@index')->name('profile');
+	Route::get('/booking', 'HomeController@index')->name('booking');
 });	
 
 //////////////////////////////////////////////////////////////////////////    ADMIN
