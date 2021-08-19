@@ -7,7 +7,7 @@
         @if (Route::currentRouteName()=="home")
             <livewire:dashboard />
         @elseif(Route::currentRouteName()=="product")
-            <livewire:product />
+            <livewire:products />
         @elseif(Route::currentRouteName()=="product.create")
             <livewire:product.create />
         @elseif(Route::currentRouteName()=="explore")

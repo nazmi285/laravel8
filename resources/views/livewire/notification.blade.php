@@ -1,4 +1,4 @@
-<div class="col-12 col-md-8 mb-3 mx-0 px-0">
+<div class="col-12 col-md-8 mb-3">
 	<div class="row justify-content-center mb-3">
 		<div class="d-flex justify-content-between">
             <h3>Notifications</h3>

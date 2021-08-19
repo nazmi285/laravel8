@@ -76,8 +76,8 @@
                         <li class="nav-item" role="presentation">
                             <a href="{{route('home')}}" class="nav-link py-3 px-1">
                                 <i class="fas fa-lg fa-home" aria-hidden="true"></i>
-                                <br>
-                                Home
+                                {{-- <br>
+                                Home --}}
                             </a>
                         </li>
                         <!-- <li class="nav-item" role="presentation">
@@ -90,8 +90,8 @@
                         <li class="nav-item" role="presentation">
                             <a href="{{route('product')}}" class="nav-link py-3 px-1">
                                 <i class="fas fa-lg fa-box" aria-hidden="true"></i>
-                                <br>
-                                Product
+                                {{-- <br>
+                                Product --}}
                             </a>
                         </li>
                         <li class="nav-item">
@@ -99,15 +99,15 @@
                                 <i class="fa fa-lg fa-bell position-relative" aria-hidden="true">
                                 <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-1"><span class="visually-hidden">unread messages</span></span></i>
 
-                                <br>
-                                Notification
+                                {{-- <br>
+                                Notification --}}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('store')}}" class="nav-link py-3 px-1">
                                 <i class="fas fa-lg fa-store"></i>
-                                <br>
-                                Store
+                                {{-- <br>
+                                Store --}}
                             </a>
                         </li>
                         <!-- <li class="nav-item">

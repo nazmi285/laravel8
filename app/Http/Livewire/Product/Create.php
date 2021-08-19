@@ -15,20 +15,20 @@ class Create extends Component
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
-            'promo_price' => 'required',
-            'stockable' => 'required',
-            'quantity' => 'required',
-            'weight' => 'required',
+            'promo_price' => '',
+            'stockable' => '',
+            'quantity' => '',
+            'weight' => '',
         ]);
 
         $product = Product::productNo();
         $product->name = $this->name;
         $product->description = $this->description;
         $product->save();
-        
-        return $product;
 
         session()->flash('success', 'New product successfully added.');
+        
+        // return $product;
     }
 
     public function render()

@@ -22,78 +22,19 @@
 						</div>
 					</a>
 				</div>
+				@forelse($products as $product)
 				<div class="col-6 col-sm-6 col-md-4">
 					<a href="#" class="product-sm mb-3 text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
 						<div class="img-wrap"> <img src="{{asset('images/items/item.jpg')}}"> </div>
 						<div class="text-wrap">
-							<p class="title text-truncate">Skillmax bike black</p>
-							<div class="price">RM35.00</div> <!-- price-wrap.// -->
+							<p class="title text-truncate">{{$product->name}}</p>
+							<div class="price">RM{{number_format($product->price ? $product->price : 0,2)}}</div> <!-- price-wrap.// -->
 						</div>
 					</a>
 			    </div>
-			    <div class="col-6 col-sm-6 col-md-4">
-					<a href="#" class="product-sm mb-3 text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
-						<div class="img-wrap"> <img src="{{asset('images/items/item.jpg')}}"> </div>
-						<div class="text-wrap">
-							<p class="title text-truncate">Apple ipad pro 32Gb white</p>
-							<div class="price">RM12.50</div> <!-- price-wrap.// -->
-						</div>
-					</a>
-			    </div>
-			    <div class="col-6 col-sm-6 col-md-4">
-					<a href="#" class="product-sm mb-3 text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
-						<div class="img-wrap"> <img src="{{asset('images/items/item.jpg')}}"> </div>
-						<div class="text-wrap">
-							<p class="title text-truncate">Headset for laptop</p>
-							<div class="price">RM17.00</div> <!-- price-wrap.// -->
-						</div>
-					</a>
-				</div>
-			    <div class="col-6 col-sm-6 col-md-4">
-					<a href="#" class="product-sm mb-3 text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
-						<div class="img-wrap"> <img src="{{asset('images/items/item.jpg')}}"> </div>
-						<div class="text-wrap">
-							<p class="title text-truncate">TP link modem</p>
-							<div class="price">RM17.00</div> <!-- price-wrap.// -->
-						</div>
-					</a>
-				</div>
-			    <div class="col-6 col-sm-6 col-md-4">
-					<a href="#" class="product-sm mb-3 text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
-						<div class="img-wrap"> <img src="{{asset('images/items/item.jpg')}}"> </div>
-						<div class="text-wrap">
-							<p class="title text-truncate">Great product name is here</p>
-							<div class="price">RM36.00</div> <!-- price-wrap.// -->
-						</div>
-					</a>
-				</div>
-				<div class="col-6 col-sm-6 col-md-4">
-					<a href="#" class="product-sm mb-3 text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
-						<div class="img-wrap"> <img src="{{asset('images/items/item.jpg')}}"> </div>
-						<div class="text-wrap">
-							<p class="title text-truncate">Great product name is here</p>
-							<div class="price">RM99.00</div> <!-- price-wrap.// -->
-						</div>
-					</a>
-				</div>
-			    <div class="col-6 col-sm-6 col-md-4">
-					<a href="#" class="product-sm mb-3 text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
-						<div class="img-wrap"> <img src="{{asset('images/items/item.jpg')}}"> </div>
-						<div class="text-wrap">
-							<p class="title text-truncate">Great product name is here</p>
-							<div class="price">RM218.00</div> <!-- price-wrap.// -->
-						</div>
-					</a>
-				</div>
-			    <div class="col-6 col-sm-6 col-md-4">
-					<a href="#" class="product-sm mb-3 text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
-						<div class="img-wrap"> <img src="{{asset('images/items/item.jpg')}}"> </div>
-						<div class="text-wrap">
-							<p class="title text-truncate">Great product name is here</p>
-							<div class="price">RM17.00</div> <!-- price-wrap.// -->
-						</div>
-					</a>
-				</div>
+			    @empty
+			    @endforelse
+			   
 			</div>
 		</div>
 	</div>
@@ -166,101 +107,3 @@
 </div>
 @endif
 
-
-    <link href="{{ asset('vendor/calendar/css/calendar.css') }}" rel="stylesheet">
-		<div class="col-12 col-sm-12 col-md-8 mb-3">
-			<div class="elegant-calencar d-md-flex">
-				<div class="wrap-header d-flex align-items-center">
-					<p id="reset">reset</p>
-					<div id="header" class="p-0">
-						<div class="pre-button d-flex align-items-center justify-content-center"><i class="fa fa-chevron-left"></i></div>
-						<div class="head-info">
-							<div class="head-day"></div>
-							<div class="head-month"></div>
-						</div>
-						<div class="next-button d-flex align-items-center justify-content-center"><i class="fa fa-chevron-right"></i></div>
-					</div>
-				</div>
-				<div class="calendar-wrap">
-					<table id="calendar">
-						<thead>
-							<tr>
-								<th>Sun</th>
-								<th>Mon</th>
-								<th>Tue</th>
-								<th>Wed</th>
-								<th>Thu</th>
-								<th>Fri</th>
-								<th>Sat</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="wrap-header bg-white d-flex align-items-center">
-
-				</div>
-			</div>
-		</div>
-		<div class="col-12 col-sm-12 col-md-8 mb-5">
-		</div>
-		
-	</div>
-</div>
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script src="{{asset('vendor/calendar/js/calendar.js')}}"></script>
