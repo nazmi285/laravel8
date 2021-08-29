@@ -30,8 +30,8 @@ Route::get('/store',function(){
 
 Route::group(['middleware' => ['auth', 'verified']], function () {
 	Route::get('/home', 'HomeController@index')->name('home');
-	// Route::get('/product', 'HomeController@index')->name('product');
-	Route::get('/product', Products::class)->name('product');
+	Route::get('/product', 'HomeController@index')->name('product');
+	// Route::get('/product', Products::class)->name('product');
 	// Route::get('/product/create', 'HomeController@index')->name('product.create');
 	Route::get('/explore', 'HomeController@index')->name('explore');
 	Route::get('/notification', 'HomeController@index')->name('notification');
