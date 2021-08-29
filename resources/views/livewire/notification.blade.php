@@ -2,11 +2,7 @@
 	@section('title')
 	<h4 class="fw-bold p-2 mb-0">Notifications</h4>
 	@endsection
-	{{-- <div class="row justify-content-center mb-3">
-		<div class="d-flex justify-content-between">
-            <h3></h3>
-        </div>
-    </div> --}}
+
     <div class="row justify-content-center mb-3">
     	<div class="col-12 col-sm-8 col-md-8 col-lg-8">
 			<div class="list-group list-group-flush">
