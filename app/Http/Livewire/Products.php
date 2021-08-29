@@ -7,9 +7,20 @@ use Livewire\Component;
 
 class Products extends Component
 {
-	public function index()
+    public $keyword,$product_id = null;
+    
+    protected $listeners = ['productChanges' => 'index'];
+
+    public function index()
     {
-        $products = Product::orderBy('created_at','desc')->get();
+        $products = Product::orderBy('created_at','desc');
+
+        $products = $products->when($this->keyword, function($query){
+            $query->where('name','like','%'.$this->keyword.'%');
+        });
+
+        $products = $products->get();
+
         return $products;
     }
 

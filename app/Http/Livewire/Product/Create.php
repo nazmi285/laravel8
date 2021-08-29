@@ -29,6 +29,8 @@ class Create extends Component
         session()->flash('success', 'New product successfully added.');
         
         // return $product;
+        $this->emit('productChanges');
+        // $this->dispatchBrowserEvent('productCreated');
     }
 
     public function render()

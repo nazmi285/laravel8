@@ -14,7 +14,7 @@
     
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    {{-- <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="manifest" href="/manifest.json">
 
@@ -37,13 +37,15 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white shadow-sm">
-            <div class="container">
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light bg-gradient">
+            <div class="container col-md-8">
                 <button class="btn btn-icon" id="dropdownUser"data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft"><i class="fas fa-lg fa-bars" aria-hidden="true"></i></button>
-                
-                <a class="navbar-brand float-center" href="{{ url('/home') }}">
+                <div class="col" id="navbarNav">
+                    @yield('title')
+                </div>
+                {{-- <a class="navbar-brand float-center" href="{{ url('/home') }}">
                     {{ config('app.name', 'Laravel') }}
-                </a>
+                </a> --}}
                 <div class="d-flex">
                     <a href="#" class="d-block link-dark text-decoration" id="dropdownUser1"data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                         <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
@@ -51,7 +53,7 @@
                     <!-- <div class="nav-item dropdown">
 
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
+                            {{-- {{ Auth::user()->name }} --}}
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
