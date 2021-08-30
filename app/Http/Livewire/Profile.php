@@ -14,6 +14,10 @@ class Profile extends Component
 		return $user;
 	}
 
+
+
+    
+
     public function render()
     {
         return view('livewire.profile', [
