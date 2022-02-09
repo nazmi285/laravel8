@@ -6,21 +6,25 @@
     <div class="row justify-content-center mb-2">
         <div class="col-12 col-sm-8 col-md-8 col-lg-8">
             
-            <div class="py-5 ps-3">
-                <small class="text-muted">28 Aug 2021</small>
+            <div class="py-5">
+                <small class="text-muted">{{\Carbon\Carbon::now()->format('d F Y')}}</small>
                 <h4 class="fw-bold">Hello, {{Auth::user()->name}}</h4>
+                
             </div>
-            <h5 class="d-grid ms-2"> Orders </h5>
+            <h5 class="d-grid"> Orders </h5>
             @foreach($orders as $key => $val)
-                <span class="badge mb-1 mt-2 rounded-0 fs-6 fw-normal text-muted">{{carbonDateSorting($key)}}</span>
+            <div class="clearfix">
+                <span class="mt-3 rounded-0 fs-6 fw-normal text-muted float-end">{{carbonDateSorting($key)}}</span>
+            </div>
+                
                 @foreach($val as $order)
-                <div class="card border-0 mb-2">
-                    <div class="card-body">
+                <div class="card border-0 rounded-0 border-bottom bg-white">
+                    <div class="card-body rounded-0 px-0">
                         <div class="clearfix">
-                            <h5 class="card-title float-start fw-bold">#{{$order->order_no}}</h5>
-                            <span class="float-end">{{carbonDiffForHumanShort($order->created_at)}}</span>
+                            <h5 class="card-title float-start">#{{$order->order_no}}</h5>
+                            <span class="float-end text-muted">{{dateConvertHIa($order->created_at)}}</span>
                         </div>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-texttext-muted ">With supporting text below as a natural lead-in to additional content.</p>
 
                     </div>
                 </div>

@@ -1,3 +1,6 @@
+@push('styles')
+ 
+@endpush
 <div>
 	<div wire:ignore.self class="modal fade p-0" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-md-down">
@@ -8,6 +11,9 @@
 				</div>
 				<div class="modal-body">
 					<div class="form-group row justify-content-center">
+        				<div class="col-12 mb-3">
+							
+						</div>
 						<div class="col-12 mb-3">
 							<label for="name">Name</label>
 							<input type="text" class="form-control text-primary" wire:model="name" id="name" value="{{old('name')}}" placeholder="e.g.Cookies">
@@ -75,9 +81,7 @@
 			</form>
 		</div>
 	</div>
-	<script>
-	 	window.livewire.on('productCreated' => {
-	     	$('#createModal').modal('hide');
-		 })
-	</script>
 </div>
+@push('scripts')
+
+@endpush
