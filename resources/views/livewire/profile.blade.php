@@ -12,17 +12,18 @@
 							<div class="col-12 col-md-6 mb-3">
 								<form>
 									<div class="mb-3">
-										<img class="img-fluid rounded-circle" src="https://github.com/mdo.png" width="78px" alt="...">
+										<img class="img-fluid rounded-circle mb-3" src="{{$user->image_url? $user->image_url:'https://github.com/mdo.png'}}" width="78px" alt="...">
+										<input wire:model="image_url" type="file" class="form-control file-hidden image_url" name="image_url" id="image_url">
 									</div>
 									<div class="mb-3">
-										<label for="full_name" class="form-label">Name</label>
-										<input type="text" class="form-control" id="full_name" value="{{$user->name}}">
+										<label for="name" class="form-label">Name</label>
+										<input wire:model="name" type="text" class="form-control" id="name" value="{{$user->name}}" >
 									</div>
 									<div class="mb-3">
 										<label for="exampleInputPassword1" class="form-label">Email</label>
 										<p class="form-control-plaintext">{{$user->email}}</p>
 									</div>
-									<button type="submit" class="btn btn-primary float-end">Save</button>
+									<button wire:click="store()" type="submit" class="btn btn-primary float-end">Save</button>
 								</form>
 							</div>
 						</div>

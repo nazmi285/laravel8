@@ -66,6 +66,13 @@ function dateConvertHISa($date)
     return $HISa;
 }
 
+function dateConvertHIa($date)
+{
+    // helper to view formated time
+    $HISa = date("h:i a", strtotime($date));
+    return $HISa;
+}
+
 function carbonDiffForHumans($date)
 {
     $thisDate = \Carbon\Carbon::parse($date);

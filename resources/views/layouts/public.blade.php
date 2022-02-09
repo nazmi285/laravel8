@@ -15,7 +15,7 @@
     
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    {{-- <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="manifest" href="/manifest.json">
 
@@ -40,8 +40,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white shadow-sm">
             <div class="container col-md-8">
-                <a class="navbar-brand float-center" href="{{ url('/home') }}">
-                    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                <a class="navbar-brand float-start d-flex flex-row" href="{{ url('/home') }}">
+                    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-3">
                 </a>
                 <div class="d-flex">
                     <a href="#" class="d-block link-dark text-decoration" id="dropdownUser1"data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
@@ -54,12 +54,12 @@
             </div>
         </nav>
         <main class="py-4 mt-5">
-            <div class="mb-3" id="mapholder"></div>
+            {{-- <div class="mb-3" id="mapholder"></div> --}}
             @yield('content')
         </main>
     </div>
     
-    <script src="{{asset('js/main.js')}}"></script>
+    {{-- <script src="{{asset('js/main.js')}}"></script> --}}
 
     @livewireScripts
 

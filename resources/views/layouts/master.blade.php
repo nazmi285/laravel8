@@ -16,7 +16,6 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     {{-- <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    <link rel="manifest" href="/manifest.json">
 
     @livewireStyles
 
@@ -37,19 +36,44 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light bg-gradient">
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white bg-gradient">
             <div class="container col-md-8">
                 <button class="btn btn-icon" id="dropdownUser"data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft"><i class="fas fa-lg fa-bars" aria-hidden="true"></i></button>
-                <div class="col" id="navbarNav">
+                {{-- <div class="col" id="navbarNav">
                     @yield('title')
-                </div>
-                {{-- <a class="navbar-brand float-center" href="{{ url('/home') }}">
+                </div> --}}
+                <a class="navbar-brand float-center" href="{{ url('/home') }}">
                     {{ config('app.name', 'Laravel') }}
-                </a> --}}
+                </a>
                 <div class="d-flex">
-                    <a href="#" class="d-block link-dark text-decoration" id="dropdownUser1"data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    {{-- <a href="#" class="d-block link-dark text-decoration" id="dropdownUser1"data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                         <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-                    </a>
+                    </a> --}}
+                    <div class="nav-item dropdown">
+
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right shadow" aria-labelledby="navbarDropdown" style="left:-90px;">
+                            <a class="dropdown-item"  href="{{ route('profile') }}">
+                                {{ Auth::user()->name }}
+                            </a>
+                            <a class="dropdown-item"  href="{{ route('setting') }}">
+                                Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </div>
                     <!-- <div class="nav-item dropdown">
 
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -71,65 +95,6 @@
                 </div>
             </div>
         </nav>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom py-0 shadow-lg">
-            <div class="container p-0">
-                <header class="d-flex justify-content-center w-100">  
-                    <ul class="nav nav-justified w-100" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <a href="{{route('home')}}" class="nav-link py-3 px-1">
-                                <i class="fas fa-lg fa-home" aria-hidden="true"></i>
-                                {{-- <br>
-                                Home --}}
-                            </a>
-                        </li>
-                        <!-- <li class="nav-item" role="presentation">
-                            <a href="{{route('explore')}}" class="nav-link py-3 px-1">
-                                <i class="fa fa-lg fa-compass" aria-hidden="true"></i>
-                                <br>
-                                Explore
-                            </a>
-                        </li> -->
-                        <li class="nav-item" role="presentation">
-                            <a href="{{route('product')}}" class="nav-link py-3 px-1">
-                                <i class="fas fa-lg fa-box" aria-hidden="true"></i>
-                                {{-- <br>
-                                Product --}}
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('notification')}}" class="nav-link py-3 px-1">
-                                <i class="fa fa-lg fa-bell position-relative" aria-hidden="true">
-                                <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-1"><span class="visually-hidden">unread messages</span></span></i>
-
-                                {{-- <br>
-                                Notification --}}
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('store')}}" class="nav-link py-3 px-1">
-                                <i class="fas fa-lg fa-store"></i>
-                                {{-- <br>
-                                Store --}}
-                            </a>
-                        </li>
-                        <!-- <li class="nav-item">
-                            <a href="{{route('setting')}}" class="nav-link py-3 px-1">
-                                <i class="fa fa-lg fa-cog" aria-hidden="true"></i>
-                                <br>
-                                Setting
-                            </a>
-                        </li> -->
-                        <!-- <li class="nav-item">
-                            <a href="#" class="nav-link py-3 text-dark" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
-                                <button type="button" class="btn btn-primary position-relative">
-                                    <i class="fas fa-lg fa-home position-relative"></i> <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"><span class="visually-hidden">unread messages</span></span>
-                                </button>
-                            </a>
-                        </li> -->
-                    </ul>
-                </header>
-            </div>
-        </nav>
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasExampleLabel">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasExampleLabel">
@@ -142,41 +107,24 @@
             <div class="offcanvas-body p-0">
 
                 <div class="d-flex flex-column flex-shrink-0 p-3 bg-light">
-                    <!-- <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-                        <span class="fs-4">Sidebar</span>
-                    </a> -->
 
-                    <!-- <hr> -->
                     <ul class="nav nav-pills flex-column mb-auto">
-                        <!-- <li class="nav-item">
-                            <a href="#" class="nav-link active" aria-current="page">
-                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-                                Home
-                            </a>
-                        </li> -->
-                        <li>
-                            <a href="{{route('familytree')}}" class="nav-link link-dark">
-                                <i class="fas fa-sitemap" aria-hidden="true"></i>
-                                FamilyTree
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{route('firebase')}}" class="nav-link link-dark">
-                                <i class="fa fa-fire" aria-hidden="true"></i>
-                                Firebase
-                            </a>
-                        </li>
                         <li>
                             <a href="{{route('bootstrap')}}" class="nav-link link-dark">
                                 <i class="fa fa-book" aria-hidden="true"></i>
-                                Bootstrap 5
+                                Bootstrap 
                             </a>
                         </li>
                         <li>
                             <a href="{{route('setting')}}" class="nav-link link-dark">
                                 <i class="fa fa-lg fa-cog" aria-hidden="true"></i>
                                 Settings
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('laporan')}}" class="nav-link link-dark">
+                                <i class="fas fa-chart-line" aria-hidden="true"></i>
+                                Laporan
                             </a>
                         </li>
                     </ul>
@@ -214,13 +162,11 @@
                 </div>
             </div>
         </div>
-        <main class="py-4 mt-5">
+        <main class="py-4 mt-5 bg-white">
             @yield('content')
         </main>
     </div>
     
-    <script src="{{asset('js/main.js')}}"></script>
-    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
     @livewireScripts
 
     @stack('scripts')

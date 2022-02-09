@@ -15,22 +15,21 @@
 			</div>
 
 	    	@forelse($products as $key => $product)
-		    	<div class="card border-0 mb-2 bg-white">
-		    		{{-- <div class="card-body"> --}}
+		    	<div class="card border-0 rounded-0 border-bottom bg-white">
+		    		<div class="card-body rounded-0 px-0">
 		    			<div class="d-flex">
-		    				<div class="flex-shrink-0" data-bs-toggle="modal" data-bs-target="#updateModal_{{$product->id}}">
-		    					<img src="{{ asset('images/items/item.jpg') }}" class="img-fluid rounded-start" alt="..." style="width: 102px; height:102px; object-fit:cover;">
+		    				<div class="flex-shrink-0" data-bs-toggle="modal" data-bs-target="#updateModal" wire:click="edit({{ $product->id }})">
+		    					<img src="{{ asset('images/items/item.jpg') }}" class="img-fluid rounded" alt="..." style="width: 102px; height:102px; object-fit:cover;">
 		    				</div>
-		    				<div class="flex-grow-1 ms-3 py-2" data-bs-toggle="modal" data-bs-target="#updateModal_{{$product->id}}">
+		    				<div class="flex-grow-1 ms-3 py-2" data-bs-toggle="modal" data-bs-target="#updateModal" wire:click="edit({{ $product->id }})">
 		    					<span class="text-muted">{{$product->name ? $product->name : ''}}</span>
 		    				</div>
 		    				<div class="flex-shrink-1">
 			    				<button class="btn px-2 m-2"><i class="fas fa-lg fa-ellipsis-h"></i></button>
 		    				</div>
 		    			</div>
-					{{-- </div> --}}
+					</div>
 				</div>
-				<livewire:product.update :product="$product" :wire:key="$product->id">
 	    	@empty
 			    <div class="col-12 col-md-4 col-lg-4">
 			    	<a href="{{route('product.create')}}">
@@ -48,8 +47,9 @@
 		</div>
 	</div>
 
-	<livewire:product.create/>
-
+	{{-- <livewire:product.create/> --}}
+	<livewire:product.update/>
 
 </div>
+
 
