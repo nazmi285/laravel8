@@ -163,6 +163,18 @@
             </div>
         </div>
         <main class="py-4 mt-5 bg-white">
+            <div class="container mb-5">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8">
+                    @if (session('success'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('success') }} 
+                        </div>
+                    @endif
+                    </div>
+                </div>
+            </div>
+
             @yield('content')
         </main>
     </div>

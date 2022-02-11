@@ -30,4 +30,23 @@ class HomeController extends Controller
     {
         return view('registration');
     }
+
+    public function laporan(Request $request)
+    {
+        $trainings = \App\Models\Training::all();
+        
+        return view('laporan',compact('trainings'));
+        // return view('laporan')->with('trainings',$trainings);
+        // return view('laporan')->with(['trainings'=>$trainings,'paramter2'=>'value 2']);
+    }
+
+    public function store(Request $request)
+    {
+        $training = new \App\Models\Training;
+        $training->nama_penuh = $request->nama_penuh;
+        $training->emel = $request->emel;
+        $training->save();
+        
+        return redirect('laporan')->with('success','Berjaya disimpan.');
+    }
 }

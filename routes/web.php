@@ -40,7 +40,15 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 	Route::get('/explore', 'HomeController@index')->name('explore');
 	Route::get('/notification', 'HomeController@index')->name('notification');
 	Route::get('/setting', 'HomeController@index')->name('setting');
+
+
+	// Route::get('/laporan', function(){
+	// 	return view('laporan');
+	// })->name('laporan');
 	Route::get('/laporan', 'HomeController@laporan')->name('laporan');
+	Route::post('/laporan/store', 'HomeController@store')->name('laporan.store');
+
+
 	Route::get('/bootstrap', 'HomeController@index')->name('bootstrap');
 	Route::get('/profile', 'HomeController@index')->name('profile');
 	Route::get('/booking', 'HomeController@index')->name('booking');
