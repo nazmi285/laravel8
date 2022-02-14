@@ -47,6 +47,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 	// })->name('laporan');
 	Route::get('/laporan', 'HomeController@laporan')->name('laporan');
 	Route::post('/laporan/store', 'HomeController@store')->name('laporan.store');
+	Route::get('/laporan/export', 'HomeController@export')->name('laporan.export');
 
 
 	Route::get('/bootstrap', 'HomeController@index')->name('bootstrap');

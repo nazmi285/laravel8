@@ -32,8 +32,9 @@
                 </div>
                 <div class="card-body">
                     <div class="col-12 mb-3">
-                        <button type="button" class="btn btn-outline-success pull-right" name="btnExportToExcel">Export To Excel</button>
-                        <button type="button" class="btn btn-outline-danger pull-right" name="btnExportToExcel">Export To PDF</button>
+                        <a href="{{url('laporan/export')}}" class="btn btn-outline-success" target="_blank">Export To Excel</a>
+                        {{-- <button type="button" class="btn btn-outline-success pull-right" name="btnExportToExcel">Export To Excel</button>
+                        <button type="button" class="btn btn-outline-danger pull-right" name="btnExportToExcel">Export To PDF</button> --}}
                     </div>
                     <table class="table">
                         <thead>

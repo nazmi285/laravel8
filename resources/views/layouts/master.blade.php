@@ -95,6 +95,15 @@
                 </div>
             </div>
         </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom py-0 shadow-lg">
+            <div class="container p-0">
+                <header class="d-flex justify-content-center w-100">
+                    <div class="m-3">
+                        <span id="timer">02:00</span>
+                    </div>
+                </header>
+            </div>
+        </nav>
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasExampleLabel">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasExampleLabel">
@@ -178,10 +187,60 @@
             @yield('content')
         </main>
     </div>
+
     
+    <div class="modal sessionModal" id="sessionModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     @livewireScripts
 
     @stack('scripts')
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            var minutes = 60 * 0.2,
+                display = document.querySelector('#timer');
+            startTimer(minutes, display); 
+        });
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
 
+            var myVar = setInterval(function () {
+                minutes = parseInt(timer / 60, 10)
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+
+                if(timer == 0){
+                    clearInterval(myVar);
+                    $('#sessionModal').modal('show');
+                }
+            }, 1000);
+        }
+    </script>
 </body>
 </html>

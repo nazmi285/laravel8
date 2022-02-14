@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Exports\LaporanExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class HomeController extends Controller
 {
@@ -48,5 +50,10 @@ class HomeController extends Controller
         $training->save();
         
         return redirect('laporan')->with('success','Berjaya disimpan.');
+    }
+
+    public function export() 
+    {
+        return Excel::download(new LaporanExport, 'laporan training.xlsx');
     }
 }
