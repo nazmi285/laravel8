@@ -28,7 +28,7 @@
         @endif
     @endif
 
-    @if(count($sub_childParents) > 0)
+    @if(!empty($sub_childParents))
         <ul>
             @foreach ($sub_childParents as $childParents)
                 @include('child_parents', ['sub_family' => $childParents])
