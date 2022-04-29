@@ -46,11 +46,6 @@ class Create extends Component
 
     }
 
-    public function newRelatedMember($family)
-    {
-        dd($id);
-    }
-
     public function render()
     {
         return view('livewire.familytree.create');

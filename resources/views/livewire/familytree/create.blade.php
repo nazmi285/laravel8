@@ -34,6 +34,7 @@
                                 <input type="date" class="form-control" wire:model="form.birthdate" id="birthdate">
                             </div>
                         </div>
+                        @if(!empty($family))
                         <div class="col-12 col-md-12 mb-3">
                             <label class="col-12 col-sm-4 col-md-4" for="relationship">Relationship</label>
                             <div class="col-12 col-sm-8 col-md-8">
@@ -45,6 +46,7 @@
                                 </select>
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
                 <div class="modal-footer">
