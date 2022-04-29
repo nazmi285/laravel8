@@ -24,13 +24,14 @@ class Create extends Component
         // $this->validate();
 
         $family = New Family;
-
-        if($this->form['relationship'] == 'child'){
-            $family->parent_id = $this->family['id'];
-        }elseif($this->form['relationship'] == 'sibling'){
-            $family->parent_id = $this->family['parent_id'];
-        }elseif($this->form['relationship'] == 'spouse'){
-            $family->partner_id = $this->family['id'];
+        if (in_array("relationship",$this->form)){
+            if($this->form['relationship'] == 'child'){
+                $family->parent_id = $this->family['id'];
+            }elseif($this->form['relationship'] == 'sibling'){
+                $family->parent_id = $this->family['parent_id'];
+            }elseif($this->form['relationship'] == 'spouse'){
+                $family->partner_id = $this->family['id'];
+            }
         }
         $family->name = $this->form['name'];
         $family->gender = $this->form['gender'];
