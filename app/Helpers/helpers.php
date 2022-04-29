@@ -66,6 +66,13 @@ function dateConvertHISa($date)
     return $HISa;
 }
 
+function dateConvertHIa($date)
+{
+    // helper to view formated time
+    $HISa = date("h:i a", strtotime($date));
+    return $HISa;
+}
+
 function carbonDiffForHumans($date)
 {
     $thisDate = \Carbon\Carbon::parse($date);
@@ -109,6 +116,16 @@ function dateConvertID($date)
 {
     $ymd = date("ymd", strtotime($date));
     return $ymd;
+}
+
+function dateTranslatedDFY($date)
+{
+    // helper to view readable formated date
+    $DFY = '';
+    if(!empty($date)){
+        $DFY = date('d F Y', strtotime($date));
+    }
+    return $DFY;
 }
 
 function getExpiredDate($date)

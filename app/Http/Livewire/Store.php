@@ -7,8 +7,33 @@ use Livewire\Component;
 
 class Store extends Component
 {
-    public $count_cart = 0;
+    public $showModal = false;
+    public $count_cart = 0, $product_id;
 
+     public function openModal()
+     {
+        dd("yes");
+        $this->showModal = true;
+        // $this->emit('show');
+     }
+
+    public function addCart()
+    {
+        dd("$id");
+        $product = Product::find($product_id);
+    }
+
+    public function deleteCart()
+    {
+    }
+
+    public function updateCart()
+    {
+    }
+    public function close()
+    {
+        $this->showModal = false;
+    }
 
 	public function index()
     {

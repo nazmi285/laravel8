@@ -33,23 +33,194 @@
             color: #212529 !important;
         }
     </style>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-family:sans-serif,Arial;
+            font-size:10pt;
+        }
+
+        .tree {
+            white-space: nowrap;
+            min-width: 800px;
+            min-height:500px;
+        }
+        .tree ul {
+            padding-top: 20px;
+            position: relative;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+        .tree li {
+            float: left;
+            text-align: center;
+            list-style-type: none;
+            position: relative;
+            padding: 20px 5px 0 5px;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+        /*We will use ::before and ::after to draw the connectors*/
+        .tree li::before, .tree li::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 50%;
+            border-top: 1px solid #ccc;
+            width: 50%;
+            height: 20px;
+        }
+        .tree li::after {
+            right: auto;
+            left: 50%;
+            border-left: 1px solid #ccc;
+        }
+        /*We need to remove left-right connectors from elements without any siblings*/
+        .tree li:only-child::after, .tree li:only-child::before {
+            display: none;
+        }
+        /*Remove space from the top of single children*/
+        .tree li:only-child {
+            padding-top: 0;
+        }
+        /*Remove left connector from first child and right connector from last child*/
+        .tree li:first-child::before, .tree li:last-child::after {
+            border: 0 none;
+        }
+        /*Adding back the vertical connector to the last nodes*/
+        .tree li:last-child::before {
+            border-right: 1px solid #ccc;
+            border-radius: 0 5px 0 0;
+            -webkit-border-radius: 0 5px 0 0;
+            -moz-border-radius: 0 5px 0 0;
+        }
+        .tree li:first-child::after {
+            border-radius: 5px 0 0 0;
+            -webkit-border-radius: 5px 0 0 0;
+            -moz-border-radius: 5px 0 0 0;
+        }
+        /*Time to add downward connectors from parents*/
+        .tree ul ul::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            border-left: 1px solid #ccc;
+            width: 0;
+            height: 20px;
+        }
+        .tree li div {
+            /*border: 1px solid #ccc;*/
+            padding: 5px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            text-decoration: none;
+            color: #666;
+            font-family: arial, verdana, tahoma;
+            font-size: 10px;
+            display: inline-block;
+            min-width: 28px;
+            min-height: 28px;
+            border-radius: 28px;
+            -webkit-border-radius: 28px;
+            -moz-border-radius: 28px;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+        /*.tree li div .male {
+            background-color:lightblue;
+            display: inline-block;
+            width:90px;
+            padding:10px;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+        }
+        .tree li div .female {
+            background-color:lightpink;
+            display: inline-block;
+            width:90px;
+            padding:10px;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+        }*/
+        .tree li div .male {
+            display: inline-block;
+            /*width:90px;*/
+            padding:4px;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+        }
+        .tree li div .female {
+            /*background-color:lightpink;*/
+            display: inline-block;
+            /*width:90px;*/
+            padding:4px;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+        }
+        .tree li div .spacer {
+            background-color:lightblue;
+            display: inline-block;
+            /*width:10px;*/
+        }
+        /*Time for some hover effects*/
+        /*We will apply the hover effect the the lineage of the element also*/
+        .tree li div:hover, .tree li div:hover + ul li div {
+            background: #c8e4f8;
+            color: #000;
+            /*border: 1px solid #94a0b4;*/
+        }
+        /*Connector styles on hover*/
+        .tree li div:hover + ul li::after,
+        .tree li div:hover + ul li::before,
+        .tree li div:hover + ul::before,
+        .tree li div:hover + ul ul::before {
+            border-color: #94a0b4;
+        }
+    </style>
     @stack('styles')
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light bg-gradient">
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white bg-gradient">
             <div class="container col-md-8">
-                <button class="btn btn-icon" id="dropdownUser"data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft"><i class="fas fa-lg fa-bars" aria-hidden="true"></i></button>
+                {{-- <button class="btn btn-icon" id="dropdownUser"data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft"><i class="fas fa-lg fa-bars" aria-hidden="true"></i></button> --}}
                 <div class="col" id="navbarNav">
                     @yield('title')
                 </div>
                 {{-- <a class="navbar-brand float-center" href="{{ url('/home') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a> --}}
-                <div class="d-flex">
+                <div class="flex-shrink-0 dropdown">
+                    <a href="#" class="d-block  text-decoration-none dropdown-toggle text-black" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="true">
+                        <img src="https://github.com/mdo.png" alt="mdo" width="29" height="29" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2" data-popper-placement="bottom-end" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(-110px, 34px, 0px);">
+                       
+                        <li><a class="dropdown-item btn-light text-gray-500" href="#">Settings</a></li>
+                        <li><a class="dropdown-item btn-light text-gray-500" href="{{url('profile')}}">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item"  href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign out</a>
+                        </li>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </ul>
+                </div>
+                {{-- <div class="d-flex">
                     <a href="#" class="d-block link-dark text-decoration" id="dropdownUser1"data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                         <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-                    </a>
+                    </a> --}}
                     <!-- <div class="nav-item dropdown">
 
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -68,7 +239,7 @@
                             </form>
                         </div>
                     </div> -->
-                </div>
+                {{-- </div> --}}
             </div>
         </nav>
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom py-0 shadow-lg">
@@ -76,42 +247,41 @@
                 <header class="d-flex justify-content-center w-100">  
                     <ul class="nav nav-justified w-100" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <a href="{{route('home')}}" class="nav-link py-3 px-1">
+                            <a href="{{route('home')}}" class="nav-link pt-3 pb-0 px-1">
                                 <i class="fas fa-lg fa-home" aria-hidden="true"></i>
-                                {{-- <br>
-                                Home --}}
+                                <p>Home</p>
                             </a>
                         </li>
                         <!-- <li class="nav-item" role="presentation">
-                            <a href="{{route('explore')}}" class="nav-link py-3 px-1">
+                            <a href="{{route('explore')}}" class="nav-link pt-3 pb-0 px-1">
                                 <i class="fa fa-lg fa-compass" aria-hidden="true"></i>
                                 <br>
                                 Explore
                             </a>
                         </li> -->
                         <li class="nav-item" role="presentation">
-                            <a href="{{route('product')}}" class="nav-link py-3 px-1">
-                                <i class="fas fa-lg fa-box" aria-hidden="true"></i>
-                                {{-- <br>
-                                Product --}}
+                            <a href="{{route('familytree')}}" class="nav-link pt-3 pb-0 px-1">
+                                <i class="fas fa-lg fa-sitemap"></i>
+                                <p>Family Tree</p>
                             </a>
                         </li>
+                        {{-- <li class="nav-item" role="presentation">
+                            <a href="{{route('product')}}" class="nav-link pt-3 pb-0 px-1">
+                                <i class="fas fa-lg fa-box" aria-hidden="true"></i>
+                            </a>
+                        </li> --}}
                         <li class="nav-item">
-                            <a href="{{route('notification')}}" class="nav-link py-3 px-1">
+                            <a href="{{route('notification')}}" class="nav-link pt-3 pb-0 px-1">
                                 <i class="fa fa-lg fa-bell position-relative" aria-hidden="true">
                                 <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-1"><span class="visually-hidden">unread messages</span></span></i>
-
-                                {{-- <br>
-                                Notification --}}
+                                <p>Notifications</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{route('store')}}" class="nav-link py-3 px-1">
                                 <i class="fas fa-lg fa-store"></i>
-                                {{-- <br>
-                                Store --}}
                             </a>
-                        </li>
+                        </li> --}}
                         <!-- <li class="nav-item">
                             <a href="{{route('setting')}}" class="nav-link py-3 px-1">
                                 <i class="fa fa-lg fa-cog" aria-hidden="true"></i>
@@ -214,13 +384,13 @@
                 </div>
             </div>
         </div>
-        <main class="py-4 mt-5">
+        <main class="py-4 mt-5 bg-white">
             @yield('content')
         </main>
     </div>
     
     <script src="{{asset('js/main.js')}}"></script>
-    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+    {{-- <script src="https://js.pusher.com/7.0/pusher.min.js"></script> --}}
     @livewireScripts
 
     @stack('scripts')

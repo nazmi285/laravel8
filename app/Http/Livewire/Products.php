@@ -7,7 +7,9 @@ use Livewire\Component;
 
 class Products extends Component
 {
-    public $keyword,$product_id = null;
+    public $keyword;
+    public $openModal = false;
+    public $product_id, $name, $description, $price, $promoable, $promo_price, $stockable, $quantity, $weight;
     
     protected $listeners = ['productChanges' => 'index'];
 
@@ -22,6 +24,17 @@ class Products extends Component
         $products = $products->get();
 
         return $products;
+    }
+
+    public function edit($id)
+    {
+        // dd($id);
+        $this->openModal = true;
+
+        $product = Product::where('id',$id)->first();
+        $this->product_id = $id;
+        $this->name = $product->name;
+        $this->description = $product->description;
     }
 
     public function render()

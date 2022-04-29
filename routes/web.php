@@ -28,6 +28,9 @@ Route::get('/store',function(){
 
 
 Route::group(['middleware' => ['auth', 'verified']], function () {
+	
+	Route::get('/registration', 'HomeController@registration')->name('registration');
+
 	Route::get('/home', 'HomeController@index')->name('home');
 	Route::get('/product', 'HomeController@index')->name('product');
 

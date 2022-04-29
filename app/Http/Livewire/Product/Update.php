@@ -29,19 +29,19 @@ class Update extends Component
         // return $product;
     }
 
-	public function mount($product)
-    {
-    	$this->product = Product::find($product->id);
-    	$this->name = $this->product->name;
-    	$this->description = $this->product->description;
-    	$this->price = $this->product->price;
-    	$this->promoable = $this->product->promoable;
-    	$this->promo_price = $this->product->promo_price;
-    	$this->stockable = $this->product->stockable;
-    	$this->quantity = $this->product->quantity;
-    	$this->weight = $this->product->weight;
-        // $this->product = Product::find($product_id);
-    }
+	// public function mount($product)
+ //    {
+ //    	$this->product = Product::find($product->id);
+ //    	$this->name = $this->product->name;
+ //    	$this->description = $this->product->description;
+ //    	$this->price = $this->product->price;
+ //    	$this->promoable = $this->product->promoable;
+ //    	$this->promo_price = $this->product->promo_price;
+ //    	$this->stockable = $this->product->stockable;
+ //    	$this->quantity = $this->product->quantity;
+ //    	$this->weight = $this->product->weight;
+ //        // $this->product = Product::find($product_id);
+ //    }
 
     public function render()
     {

@@ -3,11 +3,33 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+Use App\Models\Family;
 
 class Familytree extends Component
 {
+    protected $listeners = ['familyChanges' => 'index'];
+
+    public function index()
+    {
+        $families = Family::with('childParents')
+                    ->whereNull('parent_id')
+                    ->whereNull('partner_id')
+                    ->orderBy('created_at','desc')
+                    ->get();
+
+        return $families;
+    }
+
+    public function newRelatedMember($id)
+    {
+        $family = Family::find($id);
+        $this->emit('newRelatedMember', $family);
+    }
+
     public function render()
     {
-        return view('livewire.familytree');
+        return view('livewire.familytree', [
+            'families' => $this->index(),
+        ]);
     }
 }
