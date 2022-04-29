@@ -13,7 +13,7 @@
             </span>
         @endif
     </div>
-    @if($sub_family->partner)
+    {{-- @if($sub_family->partner)
         @if(count($sub_family->partner->childParents) > 0)
             @php 
                 $sub_childParents = $sub_family->partner->childParents
@@ -34,9 +34,9 @@
                 @include('child_parents', ['sub_family' => $childParents])
             @endforeach
         </ul>
-    @endif
+    @endif --}}
 
-    {{-- @if($sub_family->partner)
+    @if($sub_family->partner)
         @if(count($sub_family->partner->childParents) > 0)
             <ul>
                 @foreach ($sub_family->partner->childParents as $childParents)
@@ -51,5 +51,5 @@
                 @include('child_parents', ['sub_family' => $childParents])
             @endforeach
         </ul>
-    @endif --}}
+    @endif
 </li>

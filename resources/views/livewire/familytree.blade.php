@@ -31,7 +31,22 @@
                             @endif
                            
                         </div>
-                        
+                        @if($family->partner)
+                            @if(count($family->partner->childParents) > 0)
+                                <ul>
+                                    @foreach ($family->partner->childParents as $childParents)
+                                        @include('child_parents', ['sub_family' => $childParents])
+                                    @endforeach
+                                </ul>
+                            @endif
+                        @endif
+                        @if(count($family->childParents) > 0)
+                            <ul>
+                                @foreach ($family->childParents as $childParents)
+                                    @include('child_parents', ['sub_family' => $childParents])
+                                @endforeach
+                            </ul>
+                        @endif
                     </li>
                 </ul>
             @empty
