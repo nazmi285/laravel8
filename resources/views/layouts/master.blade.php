@@ -195,13 +195,9 @@
 
                 {{-- <button class="btn btn-icon" id="dropdownUser"data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft"><i class="fas fa-lg fa-bars" aria-hidden="true"></i></button> --}}
                 <div class="col" id="navbarNav">
-
                     @yield('title')
                 </div>
-                <a class="navbar-brand float-center" href="{{ url('/home') }}">
-                    {{ config('app.name', 'Laravel') }}
-
-                </a> 
+                 
                 <div class="flex-shrink-0 dropdown">
                     <a href="#" class="d-block  text-decoration-none dropdown-toggle text-black" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="true">
                         <img src="https://github.com/mdo.png" alt="mdo" width="29" height="29" class="rounded-circle">

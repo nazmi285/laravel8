@@ -23,6 +23,7 @@
                             <label class="col-12 col-sm-4 col-md-4" for="gender">Gender</label>
                             <div class="col-12 col-sm-8 col-md-8">
                                 <select class="form-select" wire:model="form.gender" id="gender">
+                                    <option value="">Please Choose</option>
                                     <option value="male" selected="true">Male</option>
                                     <option value="female">Female</option>
                                 </select>
@@ -39,6 +40,7 @@
                             <label class="col-12 col-sm-4 col-md-4" for="relationship">Relationship</label>
                             <div class="col-12 col-sm-8 col-md-8">
                                 <select class="form-select" wire:model="form.relationship" id="relationship">
+                                    <option value="">Please Choose</option>
                                     <option value="spouse">Spouse</option>
                                     <option value="child" selected="true">Child</option>
                                     <option value="sibling" selected="true">Sibling</option>

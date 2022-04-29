@@ -24,7 +24,8 @@ class Create extends Component
         // $this->validate();
 
         $family = New Family;
-        if (in_array("relationship",$this->form)){
+
+        if (array_key_exists("relationship",$this->form)){
             if($this->form['relationship'] == 'child'){
                 $family->parent_id = $this->family['id'];
             }elseif($this->form['relationship'] == 'sibling'){

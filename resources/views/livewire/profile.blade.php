@@ -1,4 +1,7 @@
 <div>
+	@section('title')
+        <h4 class="fw-bold p-2 mb-0">My Profile</h4>
+    @endsection
 	<div class="row justify-content-center">
 		<div class="col-12 col-md-8 mb-3">
 			
@@ -10,7 +13,7 @@
 								<p>Update your account's profile information and email address.</p>
 							</div>
 							<div class="col-12 col-md-6 mb-3">
-								<form>
+								<form wire:submit.prevent="save">
 									<div class="mb-3">
 										<img class="img-fluid rounded-circle mb-3" src="{{$user->image_url? $user->image_url:'https://github.com/mdo.png'}}" width="78px" alt="...">
 										<input wire:model="image_url" type="file" class="form-control file-hidden image_url" name="image_url" id="image_url">
