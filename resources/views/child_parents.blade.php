@@ -23,12 +23,12 @@
     @if($sub_family->childParents)
         @if(count($sub_family->childParents) > 0)
             @php 
-                $sub_childParents = $sub_family->childParents
+                $sub_childParents = $sub_family->childParents;
             @endphp
         @endif
     @endif
 
-    @if(!empty($sub_childParents))
+    @if(isset($sub_childParents))
         <ul>
             @foreach ($sub_childParents as $childParents)
                 @include('child_parents', ['sub_family' => $childParents])
