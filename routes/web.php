@@ -44,6 +44,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 	Route::get('/bootstrap', 'HomeController@index')->name('bootstrap');
 	Route::get('/profile', 'HomeController@index')->name('profile');
 	Route::get('/booking', 'HomeController@index')->name('booking');
+	Route::get('/familytree', 'HomeController@index')->name('familytree');
 
 });	
 
