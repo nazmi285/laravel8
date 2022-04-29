@@ -7,16 +7,16 @@ Use App\Models\Family;
 
 class Create extends Component
 {
-    public $form,$family;
+    public $form,$person;
     protected $listeners = ['newRelatedMember' => 'registerNewMember'];
 
     // protected $rules = [
     //     'form.name' => 'required|string|min:6',
     //     'form.name' => 'required|string|max:500',
     // ];
-    public function registerNewMember($family)
+    public function registerNewMember($person)
     {
-        $this->family = $family;
+        $this->person = $person;
     }
 
     public function store()
@@ -27,18 +27,32 @@ class Create extends Component
 
         if (array_key_exists("relationship",$this->form)){
             if($this->form['relationship'] == 'child'){
-                $family->parent_id = $this->family['id'];
+                $family->parent_id = $this->person['id'];
             }elseif($this->form['relationship'] == 'sibling'){
-                $family->parent_id = $this->family['parent_id'];
+                $family->parent_id = $this->person['parent_id'];
             }elseif($this->form['relationship'] == 'spouse'){
-                $family->partner_id = $this->family['id'];
+                $family->partner_id = $this->person['id'];
             }
         }
         $family->name = $this->form['name'];
         $family->gender = $this->form['gender'];
         $family->birthdate = $this->form['birthdate'];
         $family->status = 'ACTIVE';
-        $family->save();
+        if($family->save()){
+            if (array_key_exists("relationship",$this->form)){
+                if($this->form['relationship'] == 'parent'){
+                    if(!is_null($this->person['partner_id'])){
+                        $child = Family::find($this->person['partner_id']);
+                        $child->parent_id = $family->id;
+                        $child->save();
+                    }else{
+                        $child = Family::find($this->person['id']);
+                        $child->parent_id = $family->id;
+                        $child->save();
+                    }
+                }
+            }
+        }
 
         $this->emit('familyChanges');
 

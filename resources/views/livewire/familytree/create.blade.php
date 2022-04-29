@@ -35,7 +35,7 @@
                                 <input type="date" class="form-control" wire:model="form.birthdate" id="birthdate">
                             </div>
                         </div>
-                        @if(!empty($family))
+                        @if(!empty($person))
                         <div class="col-12 col-md-12 mb-3">
                             <label class="col-12 col-sm-4 col-md-4" for="relationship">Relationship</label>
                             <div class="col-12 col-sm-8 col-md-8">
@@ -44,7 +44,7 @@
                                     <option value="spouse">Spouse</option>
                                     <option value="child" selected="true">Child</option>
                                     <option value="sibling" selected="true">Sibling</option>
-                                    {{-- <option value="parent">parent</option> --}}
+                                    <option value="parent">parent</option>
                                 </select>
                             </div>
                         </div>

@@ -22,8 +22,8 @@ class Familytree extends Component
 
     public function newRelatedMember($id)
     {
-        $family = Family::find($id);
-        $this->emit('newRelatedMember', $family);
+        $person = Family::find($id);
+        $this->emit('newRelatedMember', $person);
     }
 
     public function render()

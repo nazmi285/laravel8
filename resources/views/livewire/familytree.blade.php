@@ -31,21 +31,20 @@
                             @endif
                            
                         </div>
-                        @if($family->partner)
-                            @if(count($family->partner->childParents) > 0)
-                                <ul>
+                        <ul>
+                            @if($family->partner)
+                                @if(count($family->partner->childParents) > 0)
                                     @foreach ($family->partner->childParents as $childParents)
                                         @include('child_parents', ['sub_family' => $childParents])
                                     @endforeach
-                                </ul>
+                                @endif
                             @endif
-                        @elseif(count($family->childParents) > 0)
-                            <ul>
+                            @if(count($family->childParents) > 0)
                                 @foreach ($family->childParents as $childParents)
                                     @include('child_parents', ['sub_family' => $childParents])
                                 @endforeach
-                            </ul>
-                        @endif
+                            @endif
+                        </ul>
                     </li>
                 </ul>
             @empty
