@@ -18,7 +18,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="manifest" href="/manifest.json">
 </head>
 <body>
     <div id="app">
@@ -74,6 +73,5 @@
         </main>
     </div>
     @stack('scripts')
-    <script src="{{asset('js/main.js')}}"></script>
 </body>
 </html>

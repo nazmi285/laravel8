@@ -47,7 +47,11 @@
 		</div>
 	</div>
 
+<<<<<<< HEAD
 	<livewire:product.create/>
+=======
+	{{-- <livewire:product.create/> --}}
+>>>>>>> 65078873b88bbbe17f70b0d7d3cf5cf3a3db2538
 	<livewire:product.update/>
 
 </div>

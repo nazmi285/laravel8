@@ -7,15 +7,28 @@
         <div class="col-12 col-sm-8 col-md-8 col-lg-8">
             
             <div class="py-5">
+<<<<<<< HEAD
                 <small class="text-muted">{{dateTranslatedDFY(now())}}</small>
+=======
+                <small class="text-muted">{{\Carbon\Carbon::now()->format('d F Y')}}</small>
+>>>>>>> 65078873b88bbbe17f70b0d7d3cf5cf3a3db2538
                 <h4 class="fw-bold">Hello, {{Auth::user()->name}}</h4>
+                
             </div>
+<<<<<<< HEAD
             
             {{-- <h5 class="d-grid"> Orders </h5>
             @foreach($orders as $key => $val)
                 <div class="clearfix">
                     <span class="mt-3 rounded-0 fs-6 fw-normal text-muted float-end">{{carbonDateSorting($key)}}</span>
                 </div>
+=======
+            <h5 class="d-grid"> Orders </h5>
+            @foreach($orders as $key => $val)
+            <div class="clearfix">
+                <span class="mt-3 rounded-0 fs-6 fw-normal text-muted float-end">{{carbonDateSorting($key)}}</span>
+            </div>
+>>>>>>> 65078873b88bbbe17f70b0d7d3cf5cf3a3db2538
                 
                 @foreach($val as $order)
                 <div class="card border-0 rounded-0 border-bottom bg-white">

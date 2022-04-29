@@ -40,8 +40,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 	Route::get('/explore', 'HomeController@index')->name('explore');
 	Route::get('/notification', 'HomeController@index')->name('notification');
 	Route::get('/setting', 'HomeController@index')->name('setting');
-	Route::get('/familytree', 'HomeController@index')->name('familytree');
-	Route::get('/firebase', 'HomeController@index')->name('firebase');
+	Route::get('/laporan', 'HomeController@laporan')->name('laporan');
 	Route::get('/bootstrap', 'HomeController@index')->name('bootstrap');
 	Route::get('/profile', 'HomeController@index')->name('profile');
 	Route::get('/booking', 'HomeController@index')->name('booking');
