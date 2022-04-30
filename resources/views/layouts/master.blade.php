@@ -17,6 +17,14 @@
     {{-- <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="images/hello-icon-128.png" />
+    <link rel="apple-touch-icon" href="images/hello-icon-144.png" />
+    <link rel="apple-touch-icon" href="images/hello-icon-152.png" />
+    <link rel="apple-touch-icon" href="images/hello-icon-192.png" />
+    <link rel="apple-touch-icon" href="images/hello-icon-256.png" />
+    <link rel="apple-touch-icon" href="images/hello-icon-512.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+    <meta name="theme-color" content="#db4938" />
 
     @livewireStyles
 
