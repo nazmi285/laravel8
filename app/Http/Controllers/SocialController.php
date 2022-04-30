@@ -15,7 +15,6 @@ class SocialController extends Controller
     } 
 
     public function googleCallback(){
-        dd(Socialite::driver('google'));
         $user = Socialite::driver('google')->user();
 
         $this->registerOrLoginGoogleUser($user);

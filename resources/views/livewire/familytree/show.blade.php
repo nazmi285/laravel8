@@ -1,9 +1,9 @@
 <div>
-    <div wire:ignore.self class="modal fade p-0" id="addNewFamilyModal" tabindex="-1" aria-labelledby="addNewFamilyModalLabel" aria-hidden="true">
+    <div wire:ignore.self class="modal fade p-0" id="showDetailMemberModal" tabindex="-1" aria-labelledby="updateFamilyModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-md-down">
-            <form class="modal-content" wire:submit.prevent="store">
+            <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Add New Family Member</h5>
+                    <h5 class="modal-title">Member Information</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -16,13 +16,13 @@
                         <div class="col-12 col-md-12 mb-3">
                             <label class="col-12 col-sm-4 col-md-4" for="name">Full Name</label>
                             <div class="col-12 col-sm-8 col-md-8">
-                                <input type="text" class="form-control" maxlength="255" wire:model="form.name" id="name" placeholder="e.g.Muhammad Nazmi Bin Radzuan">
+                                <input type="text" class="form-control" maxlength="255" wire:model="person.name" id="name" placeholder="e.g.Muhammad Nazmi Bin Radzuan">
                             </div>
                         </div>
                         <div class="col-12 col-md-12 mb-3">
                             <label class="col-12 col-sm-4 col-md-4" for="short name">Short Name</label>
                             <div class="col-12 col-sm-8 col-md-8">
-                                <input type="text" class="form-control" maxlength="10" wire:model="form.short_name" id="short name" placeholder="e.g.Nazmi">
+                                <input type="text" class="form-control" maxlength="10" wire:model="person.short_name" id="short name" placeholder="e.g.Nazmi">
                                 <small>Limited to 10 characters</small>
                             </div>
                         </div>
@@ -31,7 +31,7 @@
                             <div class="col-12 col-sm-8 col-md-8">
                                 <select class="form-select" wire:model="form.gender" id="gender">
                                     <option value="">Please Choose</option>
-                                    <option value="male" selected="true">Male</option>
+                                    <option value="male">Male</option>
                                     <option value="female">Female</option>
                                 </select>
                             </div>
@@ -58,15 +58,7 @@
                         @endif
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary px-5">
-                        <i class="fas fa-circle-notch fa-spin d-none mr-2" id="icon-processing"></i>
-                        Save
-                    </button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
-
