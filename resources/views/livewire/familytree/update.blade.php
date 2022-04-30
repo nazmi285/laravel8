@@ -1,7 +1,8 @@
 <div>
     <div wire:ignore.self class="modal fade p-0" id="updateFamilyModal" tabindex="-1" aria-labelledby="updateFamilyModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-md-down">
-            <form class="modal-content" wire:submit.prevent="store">
+            {{-- <form class="modal-content" wire:submit.prevent="store"> --}}
+            <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Update Information</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -65,7 +66,8 @@
                         Save
                     </button>
                 </div>
-            </form>
+            </div>
+            {{-- </form> --}}
         </div>
     </div>
 </div>

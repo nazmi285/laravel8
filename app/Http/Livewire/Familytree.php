@@ -28,6 +28,7 @@ class Familytree extends Component
 
     public function updatingMember($id)
     {
+        dd($id);
         $person = Family::find($id);
         $this->emit('updatingMember', $person);
     }

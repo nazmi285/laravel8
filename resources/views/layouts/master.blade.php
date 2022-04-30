@@ -54,7 +54,7 @@
             -moz-transition: all 0.5s;
         }
         .tree li {
-            float: left;
+            display: table-cell;
             text-align: center;
             list-style-type: none;
             position: relative;
@@ -184,6 +184,15 @@
         .tree li div:hover + ul::before,
         .tree li div:hover + ul ul::before {
             border-color: #94a0b4;
+        }
+    </style>
+    <style type="text/css">
+        ul.scrollmenu {
+          overflow: auto;
+          white-space: nowrap;
+        }
+        ul.scrollmenu .item {
+          display: inline-block;
         }
     </style>
     @stack('styles')

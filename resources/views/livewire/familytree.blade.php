@@ -20,12 +20,12 @@
                         <div class="position-relative">
                             <button class="btn btn-sm position-absolute top-0 start-100 translate-middle rounded-circle" name="btnAdd" data-bs-toggle="modal" data-bs-target="#addNewFamilyModal" wire:click="newRelatedMember({{$family->partner? $family->partner->id :$family->id}})"><i class="fas fa-plus"></i></button>
                             <span class="{{$family->gender}}">
-                                <i class="fas fa-3x fa-user-circle" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#updateFamilyModal" wire:click="updatingMember({{$family->partner? $family->partner->id :$family->id}})"></i>
+                                <i class="fas fa-3x fa-user-circle" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#updateFamilyModal" wire:click="updatingMember({{$family->id}})"></i>
                                 <p>{{$family->name}}</p>
                             </span>
                             @if($family->partner)
                                 <span class="{{$family->partner->gender}}">
-                                    <i class="fas fa-3x fa-user-circle" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#updateFamilyModal" wire:click="updatingMember({{$family->partner? $family->partner->id :$family->id}})"></i>
+                                    <i class="fas fa-3x fa-user-circle" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#updateFamilyModal" wire:click="updatingMember({{$family->partner->id}})"></i>
                                     <p>{{$family->partner->name}}</p>
                                 </span>
                             @endif
@@ -156,5 +156,5 @@
         </div>
     </div>
     <livewire:familytree.create/>
-    {{-- <livewire:familytree.update/> --}}
+    <livewire:familytree.update/>
 </div>
