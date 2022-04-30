@@ -20,7 +20,7 @@
 									</div>
 									<div class="mb-3">
 										<label for="name" class="form-label">Name</label>
-										<input wire:model="name" type="text" class="form-control" id="name" value="{{$user->name}}" >
+										<input wire:model="user.name" type="text" class="form-control" id="name" value="{{$user->name}}">
 									</div>
 									<div class="mb-3">
 										<label for="exampleInputPassword1" class="form-label">Email</label>

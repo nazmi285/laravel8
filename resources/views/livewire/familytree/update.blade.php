@@ -1,9 +1,9 @@
 <div>
-    <div wire:ignore.self class="modal fade p-0" id="addNewFamilyModal" tabindex="-1" aria-labelledby="addNewFamilyModalLabel" aria-hidden="true">
+    <div wire:ignore.self class="modal fade p-0" id="updateFamilyModal" tabindex="-1" aria-labelledby="updateFamilyModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-md-down">
             <form class="modal-content" wire:submit.prevent="store">
                 <div class="modal-header">
-                    <h5 class="modal-title">Add New Family Member</h5>
+                    <h5 class="modal-title">Update Information</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -16,7 +16,7 @@
                         <div class="col-12 col-md-12 mb-3">
                             <label class="col-12 col-sm-4 col-md-4" for="name">Full Name</label>
                             <div class="col-12 col-sm-8 col-md-8">
-                                <input type="text" class="form-control" maxlength="255" wire:model="form.name" id="name" placeholder="e.g.Muhammad Nazmi Bin Radzuan">
+                                <input type="text" class="form-control" maxlength="255" wire:model="person.name" id="name" placeholder="e.g.Muhammad Nazmi Bin Radzuan">
                             </div>
                         </div>
                         <div class="col-12 col-md-12 mb-3">
@@ -69,4 +69,3 @@
         </div>
     </div>
 </div>
-

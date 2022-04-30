@@ -26,6 +26,12 @@ class Familytree extends Component
         $this->emit('newRelatedMember', $person);
     }
 
+    public function updatingMember($id)
+    {
+        $person = Family::find($id);
+        $this->emit('updatingMember', $person);
+    }
+
     public function render()
     {
         return view('livewire.familytree', [

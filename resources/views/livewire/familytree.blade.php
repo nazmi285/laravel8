@@ -5,27 +5,27 @@
     <div class="d-flex justify-content-center mb-2 ">
         <div class="col-12 col-sm-8 col-md-8 col-lg-8 d-flex justify-content-between">
             <div class="clearfix mt-3 mb-3">
-                <a class="btn btn-link text-decoration-none" href="{{url('family/list')}}"><i class="fas fa-th-list"></i> Show List</a>
+                <a class="btn btn-link text-decoration-none" href="{{url('familytree/list')}}"><i class="fas fa-th-list"></i> Show List</a>
             </div>
             <div class="clearfix mt-3 mb-3">
                 <button type="button" class="btn btn-link text-decoration-none" data-bs-toggle="modal" data-bs-target="#addNewFamilyModal"><i class="fa fa-plus" aria-hidden="true"></i> New Family</button>
             </div>
         </div>
     </div>
-    <div class="d-flex justify-content-center overflow-auto width-auto">
-        <div class="tree" id="FamilyTreeDiv" style="width:auto;display:inline-block;">
+    <div class="d-flex justify-content-center overflow-auto">
+        <div class="tree" id="FamilyTreeDiv">
             @forelse($families as $family)
-                <ul style="display: inline-block;vertical-align: top;">
+                <ul>
                     <li>
                         <div class="position-relative">
                             <button class="btn btn-sm position-absolute top-0 start-100 translate-middle rounded-circle" name="btnAdd" data-bs-toggle="modal" data-bs-target="#addNewFamilyModal" wire:click="newRelatedMember({{$family->partner? $family->partner->id :$family->id}})"><i class="fas fa-plus"></i></button>
                             <span class="{{$family->gender}}">
-                                <i class="fas fa-3x fa-user-circle"></i>
+                                <i class="fas fa-3x fa-user-circle" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#updateFamilyModal" wire:click="updatingMember({{$family->partner? $family->partner->id :$family->id}})"></i>
                                 <p>{{$family->name}}</p>
                             </span>
                             @if($family->partner)
                                 <span class="{{$family->partner->gender}}">
-                                    <i class="fas fa-3x fa-user-circle"></i>
+                                    <i class="fas fa-3x fa-user-circle" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#updateFamilyModal" wire:click="updatingMember({{$family->partner? $family->partner->id :$family->id}})"></i>
                                     <p>{{$family->partner->name}}</p>
                                 </span>
                             @endif
@@ -156,4 +156,5 @@
         </div>
     </div>
     <livewire:familytree.create/>
+    {{-- <livewire:familytree.update/> --}}
 </div>
