@@ -12,7 +12,7 @@
             </div>
         </div>
     </div>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex overflow-auto" align="center">
         <div class="tree" id="FamilyTreeDiv">
             @forelse($families as $family)
                 <ul>
