@@ -1,6 +1,6 @@
 {
-  "name": "family Tree App",
-  "short_name": "famTreeApp",
+  "name": "MyFamilyTree",
+  "short_name": "famtree",
   "icons": [{
     "src": "images/hello-icon-128.png",
       "sizes": "128x128",
@@ -27,8 +27,8 @@
       "type": "image/png"
     }],
   "lang": "en-US",
-  "start_url": "http://127.0.0.1:8000/home",
+  "start_url": "https://app-famtree.herokuapp.com/home",
   "display": "Standalone",
   "background_color": "white",
-  "theme_color": "white",
+  "theme_color": "white"
 }
