@@ -16,7 +16,7 @@
                         <div class="col-12 col-md-12 mb-3">
                             <label class="col-12 col-sm-4 col-md-4" for="name">Full Name</label>
                             <div class="col-12 col-sm-8 col-md-8">
-                                <input type="text" class="form-control" maxlength="255" wire:model="person.name" id="name" placeholder="e.g.Muhammad Nazmi Bin Radzuan">
+                                <input type="text" class="form-control" maxlength="255" wire:model="person.name" id="name" placeholder="e.g.Muhammad Nazmi Bin Radzuan" value="{{$person->name}}">
                             </div>
                         </div>
                         <div class="col-12 col-md-12 mb-3">

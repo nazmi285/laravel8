@@ -3,11 +3,11 @@
         <h4 class="fw-bold p-2 mb-0">Big Family Tree</h4>
     @endsection
     <div class="d-flex justify-content-center mb-2 ">
-        <div class="col-12 col-sm-8 col-md-8 col-lg-8 d-flex justify-content-between">
-            <div class="clearfix mt-3 mb-3">
+        <div class="col-12 col-sm-8 col-md-8 col-lg-8">
+            {{-- <div class="clearfix mt-3 mb-3">
                 <a class="btn btn-link text-decoration-none" href="{{url('familytree/list')}}"><i class="fas fa-th-list"></i> Show List</a>
-            </div>
-            <div class="clearfix mt-3 mb-3">
+            </div> --}}
+            <div class="clearfix mt-3 mb-3 float-end">
                 <button type="button" class="btn btn-link text-decoration-none" data-bs-toggle="modal" data-bs-target="#addNewFamilyModal"><i class="fa fa-plus" aria-hidden="true"></i> New Family</button>
             </div>
         </div>
@@ -156,5 +156,7 @@
         </div>
     </div>
     <livewire:familytree.create/>
-    {{-- <livewire:familytree.show/> --}}
+    @if($isModalOpen)
+        @include('livewire.familytree.show')
+    @endif
 </div>

@@ -11,8 +11,14 @@
                 <h4 class="fw-bold">Hello, {{Auth::user()->name}}</h4>
             </div>
             
-            {{-- <h5 class="d-grid"> Orders </h5>
-            @foreach($orders as $key => $val)
+            {{-- <h5 class="d-grid"> My Family </h5> --}}
+            <div class="card text-center rounded-3 shadow">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Family Saalim Tupen</h5>
+                    {{-- <a href="#" class="btn btn-primary">Go my big family tree</a> --}}
+                </div>
+            </div>
+            {{-- @foreach($orders as $key => $val)
                 <div class="clearfix">
                     <span class="mt-3 rounded-0 fs-6 fw-normal text-muted float-end">{{carbonDateSorting($key)}}</span>
                 </div>

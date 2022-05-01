@@ -8,6 +8,16 @@ Use App\Models\Family;
 class Familytree extends Component
 {
     protected $listeners = ['familyChanges' => 'index'];
+    public $isModalOpen = 0;
+    
+    public function openModalPopover()
+    {
+        $this->isModalOpen = true;
+    }
+    public function closeModalPopover()
+    {
+        $this->isModalOpen = false;
+    }
 
     public function index()
     {
@@ -29,6 +39,7 @@ class Familytree extends Component
     public function show($id)
     {
         $this->emit('showMember', $id);
+        $this->openModalPopover();
     }
 
     public function render()

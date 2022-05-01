@@ -12,7 +12,8 @@ class Show extends Component
 
     public function showDetailMember($id)
     {
-        $this->person = Family::find($id);
+        $person = Family::find($id);
+        $this->person = $person;
     }
 
     public function render()
