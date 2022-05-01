@@ -42,6 +42,8 @@ class SocialController extends Controller
                     $user->google_id = $guser->id;
                     $user->name = $guser->name;
                     // $user->image_url = $guser->avatar;
+                    $user->google_id = $guser->id;
+                    $user->save(); 
                 }else{
                     $user->google_id = $guser->id;
                     $user->save();  
