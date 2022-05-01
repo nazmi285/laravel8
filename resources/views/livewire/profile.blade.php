@@ -15,18 +15,19 @@
 							<div class="col-12 col-md-6 mb-3">
 								<form wire:submit.prevent="save">
 									<div class="mb-3">
-										<img class="img-fluid rounded-circle mb-3" src="{{$user->image_url? $user->image_url:'https://github.com/mdo.png'}}" width="78px" alt="...">
-										<input wire:model="image_url" type="file" class="form-control file-hidden image_url" name="image_url" id="image_url">
+										<i class="fas fa-4x text-secondary fa-user-circle"></i>
+										{{-- <img class="img-fluid rounded-circle mb-3" src="{{$user->image_url? $user->image_url:'https://github.com/mdo.png'}}" width="78px" alt="..."> --}}
+										{{-- <input wire:model="image_url" type="file" class="form-control file-hidden image_url" name="image_url" id="image_url"> --}}
 									</div>
 									<div class="mb-3">
 										<label for="name" class="form-label">Name</label>
-										<input wire:model="user.name" type="text" class="form-control" id="name" value="{{$user->name}}">
+										<input type="text" class="form-control disabled" id="name" disabled="" value="{{$user->name}}">
 									</div>
 									<div class="mb-3">
 										<label for="exampleInputPassword1" class="form-label">Email</label>
-										<p class="form-control-plaintext">{{$user->email}}</p>
+										<input type="text" class="form-control disabled" id="email" disabled="" value="{{$user->email}}">
 									</div>
-									<button wire:click="store()" type="submit" class="btn btn-primary float-end">Save</button>
+									<button wire:click="store()" type="submit" class="btn btn-primary float-end px-5" disabled="">Save</button>
 								</form>
 							</div>
 						</div>
@@ -53,7 +54,7 @@
 										<label for="confirm_password" class="form-label">Confirm Password</label>
 										<input type="text" class="form-control" id="confirm_password">
 									</div>
-									<button type="submit" class="btn btn-primary float-end">Save</button>
+									<button type="submit" class="btn btn-primary float-end px-5" disabled="">Save</button>
 								</form>
 							</div>
 						</div>
@@ -70,7 +71,7 @@
 							<div class="col-12 col-md-6 mb-3">
 								<p>Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.</p>
 								<form>
-									<button type="submit" class="btn btn-danger">DELETE ACCOUNT</button>
+									<button type="submit" class="btn btn-danger float-end" disabled="">DELETE ACCOUNT</button>
 								</form>
 							</div>
 						</div>

@@ -225,11 +225,12 @@
                  
                 <div class="flex-shrink-0 dropdown">
                     <a href="#" class="d-block  text-decoration-none dropdown-toggle text-black" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="true">
-                        <img src="https://github.com/mdo.png" alt="mdo" width="29" height="29" class="rounded-circle">
+                        {{-- <img src="https://github.com/mdo.png" alt="mdo" width="29" height="29" class="rounded-circle"> --}}
+                        <i class="fas fa-2x text-secondary fa-user-circle"></i>
                     </a>
                     <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2" data-popper-placement="bottom-end" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(-110px, 34px, 0px);">
                        
-                        <li><a class="dropdown-item btn-light text-gray-500" href="#">Settings</a></li>
+                        {{-- <li><a class="dropdown-item btn-light text-gray-500" href="#">Settings</a></li> --}}
                         <li><a class="dropdown-item btn-light text-gray-500" href="{{url('profile')}}">Profile</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li>

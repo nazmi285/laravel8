@@ -7,25 +7,30 @@ Use App\Models\Family;
 
 class Show extends Component
 {
-    public $person;
-    protected $listeners = ['showMember' => 'showDetailMember'];
-    public $isModalOpen = 0;
+    public $person,$show;
+    
+    protected $listeners = ['showModal' => 'showModal'];
 
-    public function openModalPopover()
-    {
-        $this->isModalOpen = true;
-    }
-    public function closeModalPopover()
-    {
-        $this->isModalOpen = false;
-    }
 
-    public function showDetailMember($id)
-    {
+    public function showModal($id) {
         $person = Family::find($id);
         $this->person = $person;
+
+        $this->doShow();
+    }
+    public function doShow() {
+        $this->show = true;
     }
 
+    public function doClose() {
+        $this->show = false;
+    }
+    public function doSomething() {
+        // Do Something With Your Modal
+        
+        // Close Modal After Logic
+        $this->doClose();
+    }
     public function render()
     {
         return view('livewire.familytree.show');
