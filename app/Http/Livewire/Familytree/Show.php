@@ -9,6 +9,16 @@ class Show extends Component
 {
     public $person;
     protected $listeners = ['showMember' => 'showDetailMember'];
+    public $isModalOpen = 0;
+
+    public function openModalPopover()
+    {
+        $this->isModalOpen = true;
+    }
+    public function closeModalPopover()
+    {
+        $this->isModalOpen = false;
+    }
 
     public function showDetailMember($id)
     {

@@ -156,7 +156,5 @@
         </div>
     </div>
     <livewire:familytree.create/>
-    @if($isModalOpen)
-        @include('livewire.familytree.show')
-    @endif
+    <livewire:familytree.show/>
 </div>

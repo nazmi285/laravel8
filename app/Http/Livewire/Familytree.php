@@ -9,15 +9,6 @@ class Familytree extends Component
 {
     protected $listeners = ['familyChanges' => 'index'];
     public $isModalOpen = 0;
-    
-    public function openModalPopover()
-    {
-        $this->isModalOpen = true;
-    }
-    public function closeModalPopover()
-    {
-        $this->isModalOpen = false;
-    }
 
     public function index()
     {
