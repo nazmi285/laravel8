@@ -1,7 +1,7 @@
 <li>
     <div class="position-relative">
         
-        {{-- <button class="btn btn-sm position-absolute top-0 start-100 translate-middle rounded-circle" name="btnAdd" data-bs-toggle="modal" data-bs-target="#addNewFamilyModal" wire:click="newRelatedMember({{$sub_family->partner? $sub_family->partner->id :$sub_family->id}})" style="z-index: 99;"><i class="fas fa-plus"></i></button> --}}
+        <button class="btn btn-sm position-absolute top-0 start-100 translate-middle rounded-circle" name="btnAdd" data-bs-toggle="modal" data-bs-target="#addNewFamilyModal" wire:click="newRelatedMember({{$sub_family->partner? $sub_family->partner->id :$sub_family->id}})" style="z-index: 99;"><i class="fas fa-plus"></i></button>
         <span class="{{$sub_family->gender}}">
             <i class="fas fa-3x fa-user-circle"></i>
             <p>{{$sub_family->name}}</p>
