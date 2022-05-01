@@ -40,26 +40,9 @@ class SocialController extends Controller
                     $user = new User;
                     $user->email = $guser->email;
                     $user->password = Hash::make('Abcd@1234');
-                    $user->step = 1;
-                    $user->status = 'New';
                     $user->google_id = $guser->id;
                     $user->name = $guser->name;
                     // $user->image_url = $guser->avatar;
-                    if (!empty(session('ref_code'))) {
-                        $user->ref_code = session('ref_code');
-                    }
-                    if ($user->save()) {
-                        $merchant = Merchant::merchantNo();
-                        $merchant->user_id = $user->id;
-                        $merchant->save();
-
-                        $user->syncRoles('User');
-
-                        $user->markEmailAsVerified();
-
-                        $sendTo = array("database");
-                        event(new UserRegister($user, $sendTo));
-                    }
                 }else{
                     $user->google_id = $guser->id;
                     $user->save();  
