@@ -80,7 +80,7 @@
                     <div class="line-separator"></div>
                 </div>
                 <div class="row">
-                    <div class="d-grid"><a class="btn btn-lg btn-google btn-block btn-outline" href="{{ url('auth/google') }}"><img width="18px" src="https://assets.gitlab-static.net/assets/auth_buttons/google_64-9ab7462cd2115e11f80171018d8c39bd493fc375e83202fbb6d37a487ad01908.png"> Login With Google </a></div>
+                    <div class="d-grid"><a class="btn btn-lg btn-google btn-block btn-outline disabled" href="{{ url('auth/google') }}"><img width="18px" src="https://assets.gitlab-static.net/assets/auth_buttons/google_64-9ab7462cd2115e11f80171018d8c39bd493fc375e83202fbb6d37a487ad01908.png"> Login With Google </a></div>
                 </div> 
 
                 <p class="text-center mt-5">Don't have an account? 
