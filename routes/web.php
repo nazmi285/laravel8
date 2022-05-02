@@ -58,4 +58,21 @@ Route::group(['middleware' => ['throttle', 'auth:admin', 'verified']], function 
     Route::prefix('admin')->group(function () {
         Route::get('home', 'AdminController@index')->name('admin.home');
     });
+
+    Route::prefix('user-management')->group(function () {
+        Route::get('user', 'UserController@index');
+        Route::any('user/data', 'UserController@data');
+
+    	Route::get('admin', 'AdminController@index');
+    	Route::any('admin/data', 'AdminController@data');
+
+        Route::group(['prefix' => 'agent','namespace'=>'Agent'], function () {
+            Route::get('/','\App\Http\Controllers\Agent\AgentController@index')->name('agent.index');
+        });
+        Route::group(['prefix' => 'customer','namespace'=>'Customer'], function () {
+            Route::get('/','\App\Http\Controllers\Customer\CustomerController@index')->name('customer.index');
+        });
+    	Route::get('role', 'RoleController@index');
+    	Route::get('permission', 'PermissionController@index');
+    });
 });

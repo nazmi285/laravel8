@@ -16,7 +16,8 @@
         "livewire/livewire": "^2.5",
         "pusher/pusher-php-server": "^7.0",
         "sentry/sentry-laravel": "^2.8",
-        "sentry/sentry-symfony": "^4.2"
+        "sentry/sentry-symfony": "^4.2",
+        "spatie/laravel-permission": "^5.5"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

@@ -8,6 +8,7 @@ Use App\Models\Family;
 class Familytree extends Component
 {
     protected $listeners = ['familyChanges' => 'index'];
+    public $showModal = false;
 
     public function index()
     {
@@ -22,8 +23,15 @@ class Familytree extends Component
 
     public function newRelatedMember($id)
     {
-        $person = Family::find($id);
-        $this->emit('newRelatedMember', $person);
+        $member = Family::find($id);
+        $this->emit('newRelatedMember', $member);
+    }
+
+    public function showMember($id)
+    {
+        $member = Family::find($id);
+        $this->emit('showMember', $member);
+        // $this->showModal = true;
     }
 
     public function render()
