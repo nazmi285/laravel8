@@ -25,7 +25,7 @@
 @push('scripts')
     <script>
         window.addEventListener('name-updated', event => {
-            alert('hello world');
+            // alert('hello world');
         })
     </script>
 @endpush

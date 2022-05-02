@@ -11,6 +11,10 @@ class Show extends Component
     
     protected $listeners = ['showMember'=>'show'];
 
+    public function mount() {
+
+    }
+
     public function show($id) {
         $member = Family::where('id',$id)->first();
         $this->member = $member;
