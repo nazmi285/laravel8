@@ -179,7 +179,7 @@
         /*We will apply the hover effect the the lineage of the element also*/
         .tree li div:hover, .tree li div:hover + ul li div {
             background: #c8e4f8;
-            color: #000;
+            color: #111;
             /*border: 1px solid #94a0b4;*/
         }
         /*Connector styles on hover*/

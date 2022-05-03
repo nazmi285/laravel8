@@ -20,12 +20,12 @@
                         <div class="position-relative">
                             <button class="btn btn-sm position-absolute top-0 start-100 translate-middle rounded-circle" name="btnAdd" data-bs-toggle="modal" data-bs-target="#addNewFamilyModal" wire:click="newRelatedMember({{$family->partner? $family->partner->id :$family->id}})"><i class="fas fa-plus"></i></button>
                             <span class="{{$family->gender}}">
-                                <i class="fas fa-3x fa-user-circle" wire:click="showMember({{$family->id}})"></i>
+                                <i class="fas fa-3x fa-user-circle" style="cursor: pointer;" wire:click="showMember({{$family->id}})"></i>
                                 <p>{{$family->short_name}}</p>
                             </span>
                             @if($family->partner)
                                 <span class="{{$family->partner->gender}}">
-                                    <i class="fas fa-3x fa-user-circle" wire:click="showMember({{$family->partner->id}})"></i>
+                                    <i class="fas fa-3x fa-user-circle" style="cursor: pointer;" wire:click="showMember({{$family->partner->id}})"></i>
                                     <p>{{$family->partner->short_name}}</p>
                                 </span>
                             @endif
@@ -204,9 +204,21 @@
                                 <select class="form-select" wire:model="upd_relationship" id="relationship">
                                     <option value="">Please Choose</option>
                                     <option value="spouse">Spouse</option>
-                                    <option value="child" selected="true">Child</option>
-                                    <option value="sibling" selected="true">Sibling</option>
+                                    <option value="child">Child</option>
+                                    <option value="sibling">Sibling</option>
                                     <option value="parent">parent</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 mb-3">
+                            <label class="col-12 col-sm-4 col-md-4" for="relationship">Relation To</label>
+                            <div class="col-12 col-sm-8 col-md-8">
+                                <select class="form-select" wire:model="upd_relationto" id="relationto">
+                                    <option value="">Please Choose</option>
+                                    @forelse($family_rs as $member)
+                                        <option value="{{$member->id}}">{{$member->name}}</option>
+                                    @empty
+                                    @endforelse
                                 </select>
                             </div>
                         </div>

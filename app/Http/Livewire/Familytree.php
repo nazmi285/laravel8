@@ -9,7 +9,7 @@ class Familytree extends Component
 {
     protected $listeners = ['familyChanges' => 'index'];
     public $showModal = false;
-    public $upd_name, $upd_short_name, $upd_gender,$upd_birthdate,$upd_relationship,$member;
+    public $upd_name, $upd_short_name, $upd_gender,$upd_birthdate,$upd_relationship,$upd_relationto,$member;
 
     public function index()
     {
@@ -22,6 +22,13 @@ class Familytree extends Component
         return $families;
     }
 
+    public function family_rs()
+    {
+        $family_rs = Family::all();
+
+        return $family_rs;
+    }
+
     public function newRelatedMember($id)
     {
         $member = Family::find($id);
@@ -31,13 +38,24 @@ class Familytree extends Component
     public function showMember(int $id)
     {
         $member = Family::where('id',$id)->first();
+
+        if($member->relationship == 'spouse'){
+            $this->upd_relationto = $member->partner_id;
+        }elseif($member->relationship == 'child'){
+            $this->upd_relationto = $member->parent_id;
+        }elseif($member->relationship == 'parent'){
+        }elseif($member->relationship == 'sibling'){
+            $this->upd_relationto = $member->parent_id;
+        }
+
         $this->member = $member;
         $this->upd_name = $member->name;
         $this->upd_name = $member->name;
         $this->upd_short_name = $member->short_name;
         $this->upd_gender = $member->gender;
-        // $this->upd_birthdate = dateConvertDMY1($member->birthdate);
+        $this->upd_birthdate = dateConvertDMY1($member->birthdate);
         $this->upd_relationship = $member->relationship;
+        $this->upd_relationto = 14;
 
         $this->dispatchBrowserEvent('show-modal');
         // $this->emit('showMember', $member);
@@ -49,7 +67,19 @@ class Familytree extends Component
         $this->member->name = $this->upd_name;
         $this->member->short_name = $this->upd_short_name;
         $this->member->gender = $this->upd_gender;
-        $this->member->birthdate = $this->birthdate;
+        // $this->member->birthdate = $this->birthdate;
+        $this->member->relationship = $this->upd_relationship;
+
+
+            if($this->upd_relationship == 'child'){
+                $this->member->parent_id = $this->upd_relationto;
+            }elseif($this->upd_relationship == 'sibling'){
+                $this->member->parent_id = $this->upd_relationto;
+            }elseif($this->upd_relationship == 'spouse'){
+                $this->member->partner_id = $this->upd_relationto;
+            }
+        
+
         $this->member->save();
 
         $this->emit('familyChanges');
@@ -60,6 +90,7 @@ class Familytree extends Component
     {
         return view('livewire.familytree', [
             'families' => $this->index(),
+            'family_rs' => $this->family_rs(),
         ]);
     }
 }
