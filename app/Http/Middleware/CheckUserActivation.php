@@ -17,11 +17,11 @@ class CheckUserActivation
      */
     public function handle(Request $request, Closure $next)
     {
-        if(empty(Auth::user()->is_activated ) || (Auth::user()->is_activated == 'NEW')){
+        // if(empty(Auth::user()->is_activated ) || (Auth::user()->is_activated == 'NEW')){
 
-            return redirect('setup');
+        //     return redirect('setup');
 
-        }
+        // }
         return $next($request);
     }
 }
