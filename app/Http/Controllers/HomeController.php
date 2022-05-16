@@ -28,6 +28,7 @@ class HomeController extends Controller
     
     public function registration()
     {
+        // dd('register');
         return view('registration');
     }
 }

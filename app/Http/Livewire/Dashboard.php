@@ -25,7 +25,7 @@ class Dashboard extends Component
     public function index()
     {
         $families = Family::with('childParents')
-                    ->where('user_id',Auth::id())
+                    // ->where('user_id',Auth::id())
                     ->orderBy('created_at','desc')
                     ->get();
 

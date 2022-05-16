@@ -14,7 +14,7 @@
         @elseif(Route::currentRouteName()=="bootstrap")
             <livewire:bootstrap />
         @elseif(Route::currentRouteName()=="profile")
-            <livewire:profile />
+             
         @elseif(Route::currentRouteName()=="familytree")
             <livewire:familytree />
         @endif

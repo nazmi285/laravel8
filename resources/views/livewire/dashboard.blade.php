@@ -3,8 +3,8 @@
     <h4 class="fw-bold p-2 mb-0">My Family</h4>
     @endsection
 
-    <div class="row justify-content-center mb-2">
-        <div class="col-12 col-sm-8 col-md-8 col-lg-8">
+    <div class="d-flex justify-content-center">
+        <div class="col-12 col-md-6 mb-3">
             
             <div class="py-5">
                 <small class="text-muted">{{dateTranslatedDFY(now())}}</small>

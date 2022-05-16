@@ -7,7 +7,7 @@
             <form method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="d-block text-center">
-                    <img class="mb-4" src="{{asset('images/bootstrap-logo.svg')}}" alt="" width="58" height="48">
+                    <img class="mb-4" src="{{asset('images/icons8-genealogy.png')}}" alt=""  height="78">
                     <h5 class="mb-3 fw-normal">Get started with your free account</h5>
                 </div>
 

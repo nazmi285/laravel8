@@ -27,6 +27,27 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style type="text/css">
+        .or-container {
+            align-items: center;
+            color: #ccc;
+            display: flex;
+            margin: 25px 0
+        }
+
+        .line-separator {
+            background-color: #ccc;
+            flex-grow: 5;
+            height: 1px
+        }
+
+        .or-label {
+            flex-grow: 1;
+            margin: 0 15px;
+            text-align: center
+        }
+
+    </style>
+    <style type="text/css">
         .offcanvas-start{
             width: 264px !important;
         }
@@ -43,6 +64,160 @@
             padding: 0;
             font-family:sans-serif,Arial;
             font-size:10pt;
+        }
+
+        .tree {
+            white-space: nowrap;
+            min-width: 800px;
+            min-height:500px;
+        }
+        .tree ul {
+            padding-top: 20px;
+            position: relative;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+        .tree li {
+            display: table-cell;
+            text-align: center;
+            list-style-type: none;
+            position: relative;
+            padding: 20px 5px 0 5px;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+        /*We will use ::before and ::after to draw the connectors*/
+        .tree li::before, .tree li::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 50%;
+            border-top: 1px solid #ccc;
+            width: 50%;
+            height: 20px;
+        }
+        .tree li::after {
+            right: auto;
+            left: 50%;
+            border-left: 1px solid #ccc;
+        }
+        /*We need to remove left-right connectors from elements without any siblings*/
+        .tree li:only-child::after, .tree li:only-child::before {
+            display: none;
+        }
+        /*Remove space from the top of single children*/
+        .tree li:only-child {
+            padding-top: 0;
+        }
+        /*Remove left connector from first child and right connector from last child*/
+        .tree li:first-child::before, .tree li:last-child::after {
+            border: 0 none;
+        }
+        /*Adding back the vertical connector to the last nodes*/
+        .tree li:last-child::before {
+            border-right: 1px solid #ccc;
+            border-radius: 0 5px 0 0;
+            -webkit-border-radius: 0 5px 0 0;
+            -moz-border-radius: 0 5px 0 0;
+        }
+        .tree li:first-child::after {
+            border-radius: 5px 0 0 0;
+            -webkit-border-radius: 5px 0 0 0;
+            -moz-border-radius: 5px 0 0 0;
+        }
+        /*Time to add downward connectors from parents*/
+        .tree ul ul::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            border-left: 1px solid #ccc;
+            width: 0;
+            height: 20px;
+        }
+        .tree li div {
+            /*border: 1px solid #ccc;*/
+            padding: 5px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            text-decoration: none;
+            color: #666;
+            font-family: arial, verdana, tahoma;
+            font-size: 10px;
+            display: inline-block;
+            min-width: 28px;
+            min-height: 28px;
+            border-radius: 28px;
+            -webkit-border-radius: 28px;
+            -moz-border-radius: 28px;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+        /*.tree li div .male {
+            background-color:lightblue;
+            display: inline-block;
+            width:90px;
+            padding:10px;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+        }
+        .tree li div .female {
+            background-color:lightpink;
+            display: inline-block;
+            width:90px;
+            padding:10px;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+        }*/
+        .tree li div .male {
+            display: inline-block;
+            /*width:90px;*/
+            padding:4px;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+        }
+        .tree li div .female {
+            /*background-color:lightpink;*/
+            display: inline-block;
+            /*width:90px;*/
+            padding:4px;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+        }
+        .tree li div .spacer {
+            background-color:lightblue;
+            display: inline-block;
+            /*width:10px;*/
+        }
+        /*Time for some hover effects*/
+        /*We will apply the hover effect the the lineage of the element also*/
+        .tree li div:hover, .tree li div:hover + ul li div {
+            background: #c8e4f8;
+            color: #111;
+            /*border: 1px solid #94a0b4;*/
+        }
+        /*Connector styles on hover*/
+        .tree li div:hover + ul li::after,
+        .tree li div:hover + ul li::before,
+        .tree li div:hover + ul::before,
+        .tree li div:hover + ul ul::before {
+            border-color: #94a0b4;
+        }
+    </style>
+    <style type="text/css">
+        ul.scrollmenu {
+          overflow: auto;
+          white-space: nowrap;
+        }
+        ul.scrollmenu .item {
+          display: inline-block;
         }
     </style>
     @stack('styles')
@@ -61,7 +236,7 @@
 </head>
 <body class="bg-white">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white bg-gradient shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white bg-gradient">
             <div class="container col-md-8">
 
                 {{-- <button class="btn btn-icon" id="dropdownUser"data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft"><i class="fas fa-lg fa-bars" aria-hidden="true"></i></button> --}}
@@ -75,10 +250,10 @@
                         <i class="fas fa-2x text-secondary fa-user-circle"></i>
                     </a>
                     <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2" data-popper-placement="bottom-end" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(-110px, 34px, 0px);">
-                        @if(Auth()->user()->hasVerifiedEmail())
-                            <li><a class="dropdown-item btn-light text-gray-500" href="{{url('profile')}}">Profile</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                        @endif
+                       
+                        {{-- <li><a class="dropdown-item btn-light text-gray-500" href="#">Settings</a></li> --}}
+                        <li><a class="dropdown-item btn-light text-gray-500" href="{{url('profile')}}">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
                         <li>
                             <a class="dropdown-item"  href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign out</a>
                         </li>
@@ -114,7 +289,7 @@
                 {{-- </div> --}}
             </div>
         </nav>
-        @if(Auth()->user()->hasVerifiedEmail())
+
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom py-0 shadow-lg">
             <div class="container p-0">
                 <header class="d-flex justify-content-center w-100">  
@@ -173,7 +348,6 @@
                 </header>
             </div>
         </nav>
-        @endif
 
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasExampleLabel">
             <div class="offcanvas-header">
@@ -237,8 +411,9 @@
                 </div>
             </div>
         </div>
-        <main class="py-4 mt-5">
+        <main class="py-4 mt-5 bg-white">
             @yield('content')
+             {{ $slot }}
         </main>
     </div>
     

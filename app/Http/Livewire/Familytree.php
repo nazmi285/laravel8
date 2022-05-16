@@ -9,14 +9,19 @@ class Familytree extends Component
 {
     protected $listeners = ['familyChanges' => 'index'];
     public $showModal = false;
-    public $upd_name, $upd_short_name, $upd_gender,$upd_birthdate,$upd_relationship,$upd_relationto,$member;
+    public $upd_name, $upd_short_name, $upd_gender,$upd_birthdate,$upd_relationship,$upd_relationto,$member,$filter;
 
     public function index()
     {
-        $families = Family::with('childParents')
-                    ->whereNull('parent_id')
-                    ->whereNull('partner_id')
-                    ->orderBy('created_at','desc')
+        $families = Family::with('childParents');
+        if(!empty($this->filter)){
+            $families = $families->where('id',$this->filter);
+        }else{
+            $families = $families->whereNull('parent_id')
+                        ->whereNull('partner_id');
+        }
+
+        $families = $families->orderBy('created_at','desc')
                     ->get();
 
         return $families;
@@ -24,7 +29,7 @@ class Familytree extends Component
 
     public function family_rs()
     {
-        $family_rs = Family::all();
+        $family_rs = Family::orderBy('short_name','asc')->get();
 
         return $family_rs;
     }
@@ -46,6 +51,8 @@ class Familytree extends Component
         }elseif($member->relationship == 'parent'){
         }elseif($member->relationship == 'sibling'){
             $this->upd_relationto = $member->parent_id;
+        }else{
+            $this->upd_relationto = '';
         }
 
         $this->member = $member;
@@ -55,7 +62,6 @@ class Familytree extends Component
         $this->upd_gender = $member->gender;
         $this->upd_birthdate = dateConvertDMY1($member->birthdate);
         $this->upd_relationship = $member->relationship;
-        $this->upd_relationto = 14;
 
         $this->dispatchBrowserEvent('show-modal');
         // $this->emit('showMember', $member);
@@ -73,10 +79,15 @@ class Familytree extends Component
 
             if($this->upd_relationship == 'child'){
                 $this->member->parent_id = $this->upd_relationto;
+                $this->member->partner_id = null;
             }elseif($this->upd_relationship == 'sibling'){
-                $this->member->parent_id = $this->upd_relationto;
+                $sibling = Family::where('id',$this->upd_relationto)->first();
+                $this->member->parent_id = $sibling->parent_id;
+                $this->member->relationship = $sibling->relationship;
+                $this->member->partner_id = null;
             }elseif($this->upd_relationship == 'spouse'){
                 $this->member->partner_id = $this->upd_relationto;
+                $this->member->parent_id = null;
             }
         
 

@@ -15,12 +15,8 @@ class CreateFamiliesTable extends Migration
     {
         Schema::create('families', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->nullable();
-            $table->integer('parent_id')->nullable();
-            $table->integer('partner_id')->nullable();
             $table->string('name')->nullable();
-            $table->string('gender',10)->nullable();
-            $table->date('birthdate')->nullable();
+            $table->integer('total_member')->nullable();
             $table->string('status')->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();

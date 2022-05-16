@@ -3,8 +3,8 @@
 	<h4 class="fw-bold p-2 mb-0">Notifications</h4>
 	@endsection
 
-    <div class="row justify-content-center mb-3">
-    	<div class="col-12 col-sm-8 col-md-8 col-lg-8">
+    <div class="d-flex justify-content-center mb-3">
+    	<div class="col-12 col-sm-6 col-md-6 col-lg-6">
 			<div class="list-group list-group-flush">
 				<a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
 					<img src="https://github.com/twbs.png" alt="twbs" width="43" height="43" class="rounded-circle flex-shrink-0">
