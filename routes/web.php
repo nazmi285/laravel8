@@ -21,7 +21,7 @@ Route::get('/', function () {
     return redirect('login');
 });
 
-Auth::routes(['verify' => true]);
+Auth::routes(['verify' => false]);
 //Google Authentication Routes
 Route::get('auth/google', 'SocialController@redirectToGoogle');
 Route::get('auth/google/callback', 'SocialController@googleCallback');
